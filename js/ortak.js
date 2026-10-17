@@ -1,5 +1,8 @@
 // ORTAK YARDIMCILAR — tüm sayfalarda kullanılır
 
+// Her güncellemede bu sayıyı ve HTML'lerdeki ?v= değerini artır (tarayıcı eski dosyayı kullanmasın)
+const SURUM = "2";
+
 // Adres çubuğundaki ?d=wtug&k=01 gibi değerleri okur
 function param(ad) {
   return new URLSearchParams(location.search).get(ad);
@@ -9,7 +12,7 @@ function param(ad) {
 function yukle(yol) {
   return new Promise((tamam, hata) => {
     const s = document.createElement("script");
-    s.src = yol;
+    s.src = yol + "?v=" + SURUM;
     s.onload = tamam;
     s.onerror = () => hata(new Error("Dosya bulunamadı: " + yol));
     document.head.appendChild(s);

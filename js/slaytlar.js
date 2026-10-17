@@ -44,6 +44,13 @@ SLAYT.turler.odev = { etiket: "🏠 Sıra Sizde · Ödev", ciz: s => `
   <h2>${s.baslik}</h2>${metin(s)}${GORSEL.ciz(s.gorsel)}
   ${s.kitap ? `<div class="kitap">📖 Kitap ${s.kitap}</div>` : ""}` };
 
+// 🔎 MERAKLISINA: hızlı bitirenler için, atlanabilir ek görev
+SLAYT.turler.merak = { etiket: "🔎 Meraklısına · İstersen atla", ciz: s => `
+  <h2>${s.baslik}</h2>${metin(s)}
+  ${s.adimlar ? `<ol class="adimlar">${s.adimlar.map(a => `<li>${a}</li>`).join("")}</ol>` : ""}
+  ${s.kod ? `<pre class="kod">${kodRenk(s.kod)}</pre>` : ""}
+  ${GORSEL.ciz(s.gorsel)}${not(s)}` };
+
 // ✅ TEST: tıkla, doğru mu gör (hiçbir şey kaydedilmez)
 SLAYT.turler.test = { etiket: "✅ Kendini dene", ciz: s => `
   <h2>${s.baslik || "Kendini dene"}</h2>
