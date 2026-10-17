@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BT Dersleri</title>
+  <link rel="stylesheet" href="css/ortak.css">
+</head>
+<body>
+
+  <header class="ust">
+    <h1>📒 BT Dersleri</h1>
+    <p>Dersini seç, ileri tuşuyla ilerle.</p>
+  </header>
+
+  <main class="dersler" id="dersler"></main>
+
+  <footer class="alt">Nureddin Erk Perihan Erk MTAL · Bilişim Teknolojileri</footer>
+
+  <!-- VERİ: ders listesi -->
+  <script src="veri/dersler.js"></script>
+
+  <!-- GÖSTERİM: listeden butonları üret -->
+  <script>
+    const alan = document.getElementById("dersler");
+
+    window.DERSLER.forEach(d => {
+      const a = document.createElement("a");
+      a.className = "ders" + (d.aktif ? "" : " pasif");
+      a.href = "ders.html?d=" + d.kod;
+      a.style.setProperty("--renk", d.renk);
+      a.innerHTML = `
+        <span class="simge">${d.simge}</span>
+        <span>
+          <div class="ad">${d.ad}</div>
+          <span class="sinif">${d.sinif}</span>
+        </span>`;
+      alan.appendChild(a);
+    });
+  </script>
+
+</body>
+</html>
