@@ -11,9 +11,17 @@ window.SLAYT = {
 
 const metin = s => s.metin ? `<p class="metin">${s.metin}</p>` : "";
 const not = s => s.not ? `<div class="not">💡 ${s.not}</div>` : "";
+const malzeme = s => s.malzeme ? `<div class="malzeme">🖼️ Resimler: ${s.malzeme.map(m => `<a href="gorsel/malzeme/${m}" download><img src="gorsel/malzeme/${m}" alt="">${m}</a>`).join("")}</div>` : "";
 
 // Kodu renklendirerek gösterir (HTML etiketleri, özellikler, yorumlar)
 function kodRenk(kod) {
+  if (!/^\s*</.test(kod)) {
+    // önce anahtar kelimeler, sonra metinler, en son yorumlar (eklenen etiketler bozulmasın)
+    return kacis(kod)
+      .replace(/\b(var|function|return|if|else|for|while|do|switch|case|break|default|public|private|protected|override|class|interface|new|using|namespace|int|string|void|bool|true|false|null|async|await)\b/g, '<b class="k-etiket">$1</b>')
+      .replace(/(&quot;[^\n]*?&quot;|'[^'\n]*')/g, '<b class="k-deger">$1</b>')
+      .replace(/(^|[^:])(\/\/[^\n]*|\/\*[\s\S]*?\*\/)/g, '$1<i class="k-yorum">$2</i>');
+  }
   return kacis(kod)
     .replace(/(&lt;!--[\s\S]*?--&gt;)/g, '<i class="k-yorum">$1</i>')
     .replace(/(&lt;\/?)([a-zA-Z0-9!]+)/g, '$1<b class="k-etiket">$2</b>')
@@ -22,7 +30,7 @@ function kodRenk(kod) {
 
 // 📒 BİLGİ: kısa not + görsel
 SLAYT.turler.bilgi = { etiket: "📒 Not al", ciz: s => `
-  <h2>${s.baslik}</h2>${metin(s)}${GORSEL.ciz(s.gorsel)}${not(s)}` };
+  <h2>${s.baslik}</h2>${metin(s)}${s.kod ? `<pre class="kod">${kodRenk(s.kod)}</pre>` : ""}${GORSEL.ciz(s.gorsel)}${not(s)}` };
 
 // 👀 ÖRNEK: kod + (varsa) sonucu
 SLAYT.turler.ornek = { etiket: "👀 Örnek", ciz: s => `
@@ -37,11 +45,12 @@ SLAYT.turler.uygulama = { etiket: "🛠️ Uygulama", ciz: s => `
   <h2>${s.baslik}</h2>${metin(s)}
   ${s.gorsel ? `<div class="hedef"><div class="s-baslik">🎯 Bunu oluştur</div>${GORSEL.ciz(s.gorsel)}</div>` : ""}
   ${s.adimlar ? `<ol class="adimlar">${s.adimlar.map(a => `<li>${a}</li>`).join("")}</ol>` : ""}
+  ${malzeme(s)}
   ${s.kitap ? `<div class="kitap">📖 Takılırsan: kitap ${s.kitap}</div>` : ""}` };
 
 // 🏠 ÖDEV: kitaptaki "Sıra Sizde"
 SLAYT.turler.odev = { etiket: "🏠 Sıra Sizde · Ödev", ciz: s => `
-  <h2>${s.baslik}</h2>${metin(s)}${GORSEL.ciz(s.gorsel)}
+  <h2>${s.baslik}</h2>${metin(s)}${GORSEL.ciz(s.gorsel)}${malzeme(s)}
   ${s.kitap ? `<div class="kitap">📖 Kitap ${s.kitap}</div>` : ""}` };
 
 // 🔎 MERAKLISINA: hızlı bitirenler için, atlanabilir ek görev
@@ -49,7 +58,7 @@ SLAYT.turler.merak = { etiket: "🔎 Meraklısına · İstersen atla", ciz: s =>
   <h2>${s.baslik}</h2>${metin(s)}
   ${s.adimlar ? `<ol class="adimlar">${s.adimlar.map(a => `<li>${a}</li>`).join("")}</ol>` : ""}
   ${s.kod ? `<pre class="kod">${kodRenk(s.kod)}</pre>` : ""}
-  ${GORSEL.ciz(s.gorsel)}${not(s)}` };
+  ${GORSEL.ciz(s.gorsel)}${malzeme(s)}${not(s)}` };
 
 // ✅ TEST: tıkla, doğru mu gör (hiçbir şey kaydedilmez)
 SLAYT.turler.test = { etiket: "✅ Kendini dene", ciz: s => `
@@ -58,7 +67,7 @@ SLAYT.turler.test = { etiket: "✅ Kendini dene", ciz: s => `
     <div class="soru" data-dogru="${q.dogru}">
       <div class="s-metin">${i + 1}. ${q.soru}</div>
       <div class="secenekler">
-        ${q.secenekler.map((c, j) => `<button class="secenek" data-i="${j}">${c}</button>`).join("")}
+        ${q.secenekler.map((c, j) => `<button class="secenek" data-i="${j}">${q.kod ? `<code>${kacis(c)}</code>` : c}</button>`).join("")}
       </div>
     </div>`).join("")}` };
 
