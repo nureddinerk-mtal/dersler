@@ -6,7 +6,7 @@ window.KONULAR = {
   birimler: [
     { ad: "Temel Kavramlar", simge: "🧭", konular: [
       { no: "01", baslik: "Web dünyası: sayfa, site, alan adı, hosting", kitap: "s. 18–20", hazir: true },
-      { no: "02", baslik: "Web yazılımcısı rolleri",                     kitap: "s. 20–22" },
+      { no: "02", baslik: "Web yazılımcısı rolleri",                     kitap: "s. 20–22", hazir: true },
       { no: "03", baslik: "HTML, CSS, editörler ve ilk sayfam",          kitap: "s. 22–23" }
     ]},
     { ad: "HTML5", simge: "🧱", konular: [
