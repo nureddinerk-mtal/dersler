@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "form, input, button. name özelliği çok önemli: sunucuya veriyi o isimle gönderir (arka uç konusunda tekrar göreceğiz). Şimdilik form bir yere gönderilmiyor.", akis: ["form özellikleri (action, method)", "input türleri", "Üyelik formu"], hatalar: ["name vermemek (veri gitmez)", "label'ı for/id ile bağlamamak", "radio düğmelerine farklı name verip hepsinin seçilebilmesi"], sorular: [["Gönder'e bastım, bir şey olmadı?", "action boş; veriyi alacak sunucu kodu yok. .NET konusunda yapacağız."], ["password kutusu şifreyi gizler mi?", "Sadece ekranda gizler; güvenlik için HTTPS gerekir."]] },
+
+
   { tur: "bilgi", baslik: "Form ne işe yarar?",
     metin: "Ziyaretçiden bilgi alır, sunucuya gönderir.",
     gorsel: { tip: "akis", adimlar: [

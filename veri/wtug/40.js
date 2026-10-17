@@ -3,6 +3,9 @@ var G = "gorsel/wtug/";
 var L = "https://localhost:5001";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "MVC: Model veri, View görünüm, Controller trafik polisi. Adres → Controller → Action → View yolu oturursa geri kalanı kolaylaşır.", akis: ["Adres parçalama", "Model, Controller, action dönüş türleri", "View, Razor ve veri aktarımı"], hatalar: ["Controller adını …Controller ile bitirmemek", "View dosyasını yanlış klasöre koymak (Views/Kitap/…)", "View'de @model satırını unutup Model'in null gelmesi"], sorular: [["ViewBag mi model mi?", "Tek bir iki değer için ViewBag; asıl veri için model (tür güvenli)."], ["Sayfa değişikliğim görünmüyor?", "dotnet watch run kullanılırsa kaydedince otomatik yenilenir."]] },
+
+
   { tur: "bilgi", baslik: "MVC: üç katman",
     gorsel: { tip: "akis", adimlar: [
       { simge: "🖥️", yazi: "View", alt: "kullanıcının gördüğü (HTML, CSS, JS)" },

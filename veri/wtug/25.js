@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Her eleman bir kutu: içerik + padding + border + margin. F12'de kutu modelini göstermek en etkili yol. Kısa yazım saat yönünde: üst sağ alt sol.", akis: ["Kutu modeli çizimi", "Ölçü birimleri (px, %, em, vw)", "F12 ile kutuyu gör"], hatalar: ["padding ile margin'i karıştırmak (padding içeride, arka plan rengini alır)", "4 değerli kısa yazımın sırasını karıştırmak"], sorular: [["Kutum neden verdiğim genişlikten büyük?", "padding ve border genişliğe eklenir; box-sizing:border-box ile engellenir."], ["Ortalamak için?", "Genişlik verip margin: 0 auto."]] },
+
+
   { tur: "bilgi", baslik: "Her eleman bir kutudur",
     gorsel: { tip: "html", icerik: `<div style="max-width:420px;margin:0 auto;font-family:Consolas,monospace;font-size:.9rem;text-align:center">
       <div style="border:2px dashed #f2994a;background:#fff3e6;padding:8px 22px 22px">margin (dış boşluk)

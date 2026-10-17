@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "GET ve POST ile form verisini sunucuya almak. HTML'deki name ile action parametre adının aynı olması bu konunun kalbi.", akis: ["GET–POST tablosu", "GET ve POST uygulamaları (sayfalar oklu)", "IFormCollection, model binding, dosya yükleme"], hatalar: ["name ile parametre adının uyuşmaması (değer null gelir)", "Dosya yüklerken enctype'ı unutmak", "[HttpPost] yazmayıp GET action'ın çalışması"], sorular: [["Şifre GET ile gönderilir mi?", "Hayır, adres çubuğunda görünür; POST kullanılır."], ["Büyük-küçük harf önemli mi?", "Model binding büyük-küçük harfe duyarlı değildir (Sıra Sizde bunu buldurur)."]] },
+
+
   { tur: "bilgi", baslik: "Form: kullanıcıdan sunucuya",
     gorsel: { tip: "parcala", parcalar: [
       { yazi: "&lt;form", etiket: "" }, { yazi: "method=\"POST\"", etiket: "nasıl gidecek?" }, { yazi: "action=\"/Home/Index\"&gt;", etiket: "nereye gidecek?" },

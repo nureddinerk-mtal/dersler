@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Kart, collapse, navbar, form, carousel, modal, ikon. JS gerektiren bileşenler (navbar, modal, carousel) bundle.js olmadan çalışmaz.", akis: ["Kart ve grid birlikte", "Navbar (dar ekranda ☰)", "Galeri, modal, form uygulamaları"], hatalar: ["data-target ile id'nin eşleşmemesi (#menu ↔ id=\"menu\")", "jQuery ve bundle.js'yi unutmak ya da sırasını karıştırmak", "Font Awesome bağlantısını eklememek"], sorular: [["Menü telefonda açılmıyor?", "bundle.js eksik ya da data-target yanlış."], ["Hazır şablon kullanabilir miyiz?", "Evet; getbootstrap.com/docs/4.6/examples incelemek iyi bir başlangıç."]] },
+
+
   { tur: "bilgi", baslik: "Kart (card)",
     gorsel: { tip: "agac", kok: { ad: "div.card", cocuklar: [
       { ad: "img.card-img-top", alt: "üst resim" },

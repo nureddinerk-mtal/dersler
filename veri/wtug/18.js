@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "select/option, textarea, fieldset/legend, meter ve progress. meter ölçüm (doluluk), progress ilerleme (yükleme) içindir.", akis: ["Seçim listeleri", "Çerçeveli form ve yorum formu", "meter / progress uygulaması"], hatalar: ["textarea'yı input gibi tek etiketle yazmak (kapanışı var)", "meter ile progress'i karıştırmak"], sorular: [["Listeden birden fazla seçim?", "select'e multiple ekle; Ctrl ile seçilir."], ["textarea'nın boyutunu nasıl ayarlarım?", "rows ve cols ya da CSS width/height."]] },
+
+
   { tur: "bilgi", baslik: "Seçim listesi",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "&lt;select&gt;", alt: "Listenin kendisi" },

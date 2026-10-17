@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "JavaScript ile sayfa davranış kazanır. Bu konunun hedefi: seçici ile elemanı bulup bir özelliğini değiştirmek. F12 Console'u ilk günden kullandırın.", akis: ["Üç katman ve yazım kuralları", "Dört seçici", "JScript ve id seçici uygulamaları"], hatalar: ["getElementsByClassName'den sonra [0] unutmak", "CSS özelliğini tireli yazmak (font-size → fontSize)", "script'i elemanlardan önce (head'e) yazıp null hatası almak"], sorular: [["Kod çalışmıyor, nereden anlarım?", "F12 → Console kırmızı hatayı ve satır numarasını gösterir."], ["JS nereye yazılır?", "Genelde &lt;/body&gt;'den hemen önce ya da harici .js dosyası."]] },
+
+
   { tur: "bilgi", baslik: "Sayfanın üç katmanı",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "🦴 HTML", alt: "İskelet: ne var?" },

@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "if, else, else if, switch. Net kontrolü örneği sınır değerleri (10, 25, 40) üzerinden tartıştırmak için çok uygun.", akis: ["Yol ayrımı görseli", "if / else / else if", "Mod, net, gün uygulamaları"], hatalar: ["if(x=5) yazmak (atama, karşılaştırma değil)", "switch'te break unutmak", "else'ten sonra şart yazmak"], sorular: [["switch mi if mi?", "Tek değişkenin sabit değerlerine göre dallanıyorsa switch daha okunaklı."], ["Birden fazla şart?", "&amp;&amp; (ve), || (veya)."]] },
+
+
   { tur: "bilgi", baslik: "Yol ayrımı",
     gorsel: { tip: "html", icerik: `<svg viewBox="0 0 420 170" style="max-width:420px;width:100%;font-family:Segoe UI,Arial">
       <rect x="150" y="6" width="120" height="40" rx="8" fill="#9b51e0"/><text x="210" y="31" fill="#fff" text-anchor="middle" font-size="15">Şart?</text>

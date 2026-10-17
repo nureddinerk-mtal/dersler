@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "table → tr → td/th sırası. Tablo satır satır yazılır, sütun diye bir etiket yoktur. Bu, öğrencinin en zorlandığı zihinsel model.", akis: ["Tahtada 3×3 tablo çiz, satır satır kodla", "border, cellpadding, cellspacing", "Görüntüden kodu bul"], hatalar: ["Sütun etiketi aramak", "Bir satırda eksik td yazıp tablonun kaymasını anlamamak", "th'yi tr dışına yazmak"], sorular: [["Tabloyu ortalayabilir miyim?", "Eski yöntem align=\"center\"; doğrusu CSS margin:auto."], ["th ile td farkı?", "th başlık hücresi: kalın ve ortalı gelir, anlam olarak da başlıktır."]] },
+
+
   { tur: "bilgi", baslik: "Tablo: satır × sütun",
     metin: "Satır ile sütunun kesiştiği yer <b>hücre</b>dir.",
     gorsel: { tip: "html", icerik: `<table style="border-collapse:collapse;margin:0 auto;font-family:Consolas,monospace;text-align:center">

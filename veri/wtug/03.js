@@ -2,6 +2,8 @@
 window.KONU = {
   slaytlar: [
 
+  { tur: "hoca", ozet: "HTML iskelet, CSS kıyafet. İlk kez editör açılıp .html dosyası kaydedilecek; asıl hedef dosyayı doğru uzantıyla kaydedip tarayıcıda açabilmek.", akis: ["Etiket anatomisi (açılış, kapanış, içerik)", "VS Code / Not Defteri ile ilk sayfa", "Kitabın soruları"], hatalar: ["Dosyayı .html.txt olarak kaydetmek (Windows'ta uzantılar gizli; Dosya Gezgini → Görünüm → Dosya adı uzantıları)", "Kapanış etiketindeki / işaretini unutmak", "Etiketleri çapraz kapatmak: &lt;b&gt;&lt;i&gt;…&lt;/b&gt;&lt;/i&gt;"], sorular: [["Kodu değiştirdim ama sayfa değişmedi?", "Dosyayı kaydetmedin ya da tarayıcıyı yenilemedin (F5)."], ["Hangi editör en iyisi?", "Okulda VS Code öneriyoruz; renklendirme ve otomatik tamamlama var."]] },
+
     { tur: "bilgi", baslik: "HTML nedir?",
       metin: "Web sayfası hazırlamak için kullanılan <b>işaretleme dili</b>. Web sitesinin iskeleti.",
       gorsel: { tip: "parcala", parcalar: [

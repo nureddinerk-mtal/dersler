@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Çocuk (&gt;), torun (boşluk), sözde sınıf (:hover, :first-child) ve sözde eleman (::first-letter). :hover menüler için çok sevilir.", akis: ["Çocuk–torun farkını profil kartında göster", "Sözde sınıf menü", "Sözde eleman"], hatalar: ["div&gt;b ile div b farkını karıştırmak", "Sözde sınıfta boşluk bırakmak: a :hover (çalışmaz)"], sorular: [["Tek ve çift satırları farklı renk yapabilir miyim?", "Evet: tr:nth-child(odd) / (even)."], ["Tek iki nokta mı çift mi?", "Sözde sınıf tek (:hover), sözde eleman çift (::first-line)."]] },
+
+
   { tur: "bilgi", baslik: "Çocuk ve torun",
     gorsel: { tip: "ikili", ok: "≠",
       sol: { baslik: "div>b · sadece çocuklar", gorsel: { tip: "agac", kok: { ad: "div", cocuklar: [{ ad: "b ✅", renk: "#27ae60" }, { ad: "p", renk: "#8a8a8a", cocuklar: [{ ad: "b ❌", renk: "#eb5757" }] }] } } },

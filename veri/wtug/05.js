@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Blok ve satır içi ayrımı burada kurulur; CSS'te display konusuna kadar sık geri döneceğiz. Başlıklar boyut için değil, anlam (hiyerarşi) için kullanılır.", akis: ["Blok / satır içi görselleri", "h1–h6 uygulaması", "Haber sitesinde başlık avı (meraklısına)"], hatalar: ["Yazıyı büyütmek için h1 kullanmak (boyut CSS'in işi)", "Sayfada birden fazla h1 kullanmak"], sorular: [["h7 var mı?", "Yok, en küçük başlık h6."], ["Başlık neden arama motoru için önemli?", "Google sayfanın konusunu başlıklardan anlar."]] },
+
+
   { tur: "bilgi", baslik: "Blok ve satır içi etiketler",
     gorsel: { tip: "ikili",
       sol: { baslik: "🧱 Blok: alt alta, tam satır", gorsel: { tip: "html", icerik: `<div style="display:grid;gap:6px">

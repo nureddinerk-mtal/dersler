@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Paragraf ve biçim etiketleri. Kilit nokta: b ile strong, i ile em aynı görünür ama strong/em anlam taşır (ekran okuyucular vurgular).", akis: ["p ve br farkı", "Biçim etiketleri ve görünüm–anlam farkı", "Gençliğe Hitabe uygulaması"], hatalar: ["Boşluk ve satır atlamak için Enter'a basmak (HTML boşlukları yok sayar; br ya da p gerekir)", "&lt;br&gt; için kapanış etiketi yazmak", "sup ile sub'ı karıştırmak (H₂O alt, x² üst)"], sorular: [["Enter'a bastım, alt satıra geçmedi?", "HTML'de satır atlamak için &lt;br&gt; ya da yeni &lt;p&gt; gerekir."], ["&amp;nbsp; ne işe yarar?", "Bölünmez boşluk; birden fazla boşluk koymak için kullanılabilir."]] },
+
+
   { tur: "bilgi", baslik: "Paragraf: &lt;p&gt;",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "✅ Doğru", alt: "<code>&lt;p&gt;Birinci&lt;/p&gt;<br>&lt;p&gt;İkinci&lt;/p&gt;</code>", renk: "#27ae60" },

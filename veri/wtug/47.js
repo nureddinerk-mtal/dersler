@@ -3,6 +3,9 @@ var G = "gorsel/wtug/";
 var KT = { tip: "tablo", ad: "KitapTablo", anahtar: "KitapId", sutunlar: ["KitapId", "KitapAdi", "KitapYazar", "KitapTur", "YayinEvi"] };
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "CRUD: ekle, listele, güncelle, sil. SaveChanges() unutulursa hiçbir şey kaydedilmez. Güncellemede gizli KitapId alanı kilit nokta.", akis: ["CRUD kartları ve sayfa haritası", "Ekle ve listele (LINQ)", "Güncelle ve sil"], hatalar: ["SaveChanges() unutmak", "Güncelleme formunda gizli KitapId alanını koymamak (yeni kayıt ekler)", "Kitap koduyla tablo başlıklarının sırasının uyuşmaması (kitap hatası)"], sorular: [["Find mi FirstOrDefault mu?", "Find sadece birincil anahtara göre arar; FirstOrDefault herhangi bir şarta göre."], ["Silmeden önce neden onay sayfası?", "Yanlışlıkla silmeyi önlemek ve silme işlemini POST ile güvenli yapmak için."]] },
+
+
   { tur: "bilgi", baslik: "CRUD: dört temel işlem",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "➕ Create", alt: "Ekle → db.Add() + SaveChanges()" },

@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Razor Pages, MVC'nin sayfa bazlı sade hâli. Sınav ve kitap için farkları bilmek yeterli; projelerde MVC ile devam ediyoruz.", akis: ["Klasör karşılaştırması", "@page ve OnGet", "İlk Razor Pages projesi"], hatalar: ["@page satırını unutmak", ".cshtml ile .cshtml.cs adlarının farklı olması"], sorular: [["Hangisini kullanalım?", "Küçük projede Razor Pages, büyük projede MVC; ikisi birlikte de olur."], ["OnGet ne zaman çalışır?", "Sayfa adresine girilince (GET isteği)."]] },
+
+
   { tur: "bilgi", baslik: "Razor Pages: sayfa bazlı",
     metin: "MVC alt yapısını kullanır, klasör sayısını azaltır. MVC'nin yerine değil, yanında.",
     gorsel: { tip: "ikili",

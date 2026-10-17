@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "CSS'in üç ekleme yolu: satır içi, sayfa içi, harici. Harici CSS en doğrusu; bir dosya değişince bütün site değişir. Öncelik: satır içi > sayfa içi > harici (sonraki yazılan kazanır).", akis: ["Önce/sonra görselleri", "Üç yöntemi aynı sayfada dene", "İki harici CSS dosyası"], hatalar: ["link etiketini body'ye yazmak ya da rel=\"stylesheet\"i unutmak", "Harici CSS'e &lt;style&gt; etiketi yazmak", "Noktalı virgül ve süslü parantez unutmak"], sorular: [["CSS dosyam çalışmıyor?", "href'teki yol ve dosya adı yanlış olabilir; F12 → Console'da 404 hatası görünür."], ["İki kural çakışırsa?", "Daha özel seçici, eşitse en son yazılan kazanır."]] },
+
+
   { tur: "bilgi", baslik: "HTML vücut, CSS kıyafet",
     gorsel: { tip: "ikili",
       sol: { baslik: "Sadece HTML", gorsel: { tip: "tarayici", adres: "index.html", icerik: "<h1>CSS öğreniyorum</h1>" } },

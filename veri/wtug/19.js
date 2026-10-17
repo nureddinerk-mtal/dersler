@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "required, placeholder, min/max, step, pattern, autofocus, readonly, disabled. Tarayıcı kendisi kontrol eder; JavaScript gerekmez.", akis: ["Form geneli özellikleri", "Kutu özellikleri", "Kontrollü kayıt formu"], hatalar: ["placeholder'ı value sanmak (placeholder gönderilmez)", "pattern'de ^ ve $ unutmak", "disabled kutunun verisinin gönderilmediğini bilmemek (readonly gönderilir)"], sorular: [["Bu kontroller yeterli mi?", "Hayır; kötü niyetli kullanıcı atlatabilir, sunucuda da kontrol gerekir (.NET doğrulama konusu)."], ["pattern'i nereden öğrenirim?", "Düzenli ifade (regex) denir; temel kalıplar yeter: [0-9]{11} gibi."]] },
+
+
   { tur: "bilgi", baslik: "Form geneli için",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "autocomplete=\"on\"", alt: "Daha önce yazılanı önerir (off: kapalı)" },

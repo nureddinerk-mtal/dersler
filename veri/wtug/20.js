@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Tasarım ilkeleri: önce içerik, sonra taslak, sonra renk ve tipografi. Kod yok; kâğıt-kalem taslak çizdirmek bu konuyu kalıcı yapıyor.", akis: ["Örnek siteleri birlikte eleştir", "Sıcak / soğuk renk, kontrast", "Okul sitesi taslağı (kâğıda)"], hatalar: ["Çok fazla renk ve yazı tipi kullanmak", "Açık zemine açık yazı (kontrast düşük)"], sorular: [["Kaç renk kullanmalıyım?", "Genelde 1 ana + 1–2 yardımcı renk yeter."], ["Hangi yazı tipi?", "Ekranda okunaklı, en fazla 2 farklı yazı tipi."]] },
+
+
   { tur: "bilgi", baslik: "Web tasarım ilkeleri",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "📝 İçerik", alt: "Ne anlatıyorum?" }, { ust: "📐 Tasarım", alt: "Nereye koyuyorum?" },

@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "RGB, hex, rgba renkler; gradient; yazı tipi özellikleri; Google Fonts. Renk kodlarını ezberletmeye gerek yok, renk seçici kullanmayı öğretin.", akis: ["RGB mantığı", "Gradient ve hover geçişi", "Makale tipografisi"], hatalar: ["# işaretini unutmak", "Google Fonts link'ini eklemeden font-family yazmak", "rgba'da saydamlığı 0–100 yazmak (0–1 olmalı)"], sorular: [["Renk kodunu nereden bulurum?", "VS Code'da renk kutusuna tıkla ya da Google'da “color picker”."], ["Yazı tipi neden bende farklı?", "O yazı tipi bilgisayarda yoksa yedek yazı tipi gösterilir; Google Fonts bunu çözer."]] },
+
+
   { tur: "bilgi", baslik: "Ekranın üç ana rengi: RGB",
     gorsel: { tip: "html", icerik: `<svg viewBox="0 0 220 200" width="220" style="display:block;margin:0 auto;mix-blend-mode:normal"><g style="mix-blend-mode:screen">
       <circle cx="80" cy="80" r="60" fill="#ff0000"/><circle cx="140" cy="80" r="60" fill="#00ff00" style="mix-blend-mode:screen"/><circle cx="110" cy="130" r="60" fill="#0000ff" style="mix-blend-mode:screen"/></g></svg>

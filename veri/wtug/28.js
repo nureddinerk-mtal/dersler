@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "@media ile ekran genişliğine göre farklı stil. Bootstrap'in (29–31) arkasındaki fikir budur. Tarayıcı penceresini daraltıp göstermek yeterli.", akis: ["Duyarlılık fikri", "@media yazımı ve şartlar", "Ekrana göre reklam uygulaması"], hatalar: ["max-width ile min-width'i karıştırmak", "viewport meta etiketini unutup telefonda testin çalışmaması", "@media içindeki süslü parantezleri eksik kapatmak"], sorular: [["Hangi genişlikleri kullanmalıyım?", "Yaygın: 576, 768, 992, 1200 px (Bootstrap'in sınırları)."], ["Telefonu nasıl taklit ederim?", "F12 → cihaz araç çubuğu (Ctrl+Shift+M)."]] },
+
+
   { tur: "bilgi", baslik: "Duyarlılık nedir?",
     metin: "Aynı site bilgisayarda, tablette, telefonda rahat görünsün.",
     gorsel: { tip: "akis", adimlar: [

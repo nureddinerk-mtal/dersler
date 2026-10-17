@@ -2,6 +2,8 @@
 window.KONU = {
   slaytlar: [
 
+  { tur: "hoca", ozet: "Ön uç (kullanıcının gördüğü) ve arka uç (sunucuda çalışan) ayrımı. Bu ayrım dersin bütün planının haritası: önce ön uç (HTML, CSS, JS), en sonda arka uç (.NET).", akis: ["Bir alışveriş sitesinde neyin ön, neyin arka uç olduğunu birlikte bul", "Roller ve diller", "“Bu iş kimin?” testi"], hatalar: ["HTML'i programlama dili sanmak (işaretleme dilidir)", "Veri tabanını ön uç sanmak"], sorular: [["Hangisi daha çok kazanır?", "İkisi de aranır; full stack bilen daha esnek iş bulur. Önemli olan iyi öğrenmek."], ["Java ile JavaScript aynı mı?", "Hayır, isimleri benzer ama tamamen ayrı diller."]] },
+
     { tur: "bilgi", baslik: "Bir web sitesinin iki yüzü",
       gorsel: { tip: "kartlar", kartlar: [
         { ust: "🎨 Ön uç · Frontend", alt: "Görünen yüz: menü, buton, renk, yazı" },

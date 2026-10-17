@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "HTML5 anlamsal etiketleri: header, nav, section, article, aside, footer, figure. Görünüşte div'den farkları yok; arama motoru ve ekran okuyucu için anlam katarlar.", akis: ["Anlamsız vs anlamsal karşılaştırma", "Kim ne iş yapar?", "Anlamsal iskelet uygulaması"], hatalar: ["section ile article'ı karıştırmak (article tek başına anlamlı içerik: haber, yazı)", "Anlamsal etiket koyunca sayfanın renkleneceğini sanmak"], sorular: [["Görünüm değişmiyorsa neden kullanıyoruz?", "Google ve görme engelli kullanıcıların ekran okuyucusu sayfayı bu etiketlerle anlar."], ["Bir sayfada birden fazla header olur mu?", "Evet; her article'ın kendi header'ı olabilir."]] },
+
+
   { tur: "bilgi", baslik: "Anlamsal etiket nedir?",
     gorsel: { tip: "ikili",
       sol: { baslik: "❓ Anlamsız", gorsel: { tip: "kartlar", kartlar: [{ ust: "&lt;div&gt; &lt;span&gt;", alt: "İçinde ne var, söylemez", renk: "#8a8a8a" }] } },

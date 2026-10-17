@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Bire bir, bire çok, çoka çok ilişkiler. Tabloları kâğıtta çizip okları çizdirmek kodlamadan önce çok işe yarıyor. Include ile ilişkili veri getirilir.", akis: ["İlişki türleri ve tablo görselleri", "Öğrenci–adres, tür–kitap", "Ödünç işlemleri (ara tablo)"], hatalar: ["Kitaptaki “Ogreciler” yazım hatasını kopyalamak", "Include unutup KitapTur'un null gelmesi", "Yabancı anahtarın adını yanlış yazmak (EF ilişkiyi bulamaz)"], sorular: [["Neden tür adını her kitapta yazmıyoruz?", "Tekrar ve yazım hatası olmasın diye; numarası (Id) tutulur."], ["Çoka çok neden ara tablo ister?", "Bir hücreye birden fazla değer yazılamaz; her eşleşme ara tabloda bir satır olur."]] },
+
+
   { tur: "bilgi", baslik: "Üç ilişki türü",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "1 ⟷ 1 Bire bir", alt: "Bir öğrencinin bir adresi var" },

@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Yönlendirme: adres hangi controller/action'a gider. Varsayılan şablon, özel kural, kısıtlama ve öznitelik (Route) yönlendirmesi.", akis: ["Şablon parçaları", "Özel kural ve haber detay", "Kısıtlama ve öznitelik"], hatalar: ["Kural sırasını yanlış yazmak (ilk eşleşen kazanır)", "Öznitelik kullanırken MapControllers eklememek", "{id:int}'e metin gönderip 404'e şaşırmak"], sorular: [["Neden güzel adres önemli?", "Hem kullanıcı hem Google için anlamlı: /haber/123 gibi."], ["404 alıyorum?", "Hiçbir kural eşleşmedi; adresi ve kısıtları kontrol et."]] },
+
+
   { tur: "bilgi", baslik: "Yönlendirme nedir?",
     metin: "Gelen isteğin hangi controller ve hangi action'a gideceğini belirler.",
     gorsel: { tip: "parcala", parcalar: [

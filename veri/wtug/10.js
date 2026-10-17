@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "div blok kutu, span satır içi kutu. İkisinin de anlamı yok; tek amaç CSS ile gruplayıp biçimlemek. Sayfa şablonu fikri burada başlar.", akis: ["div ve span farkı", "Renkli kutular", "div ile şablon"], hatalar: ["span'e genişlik/yükseklik verip çalışmamasına şaşırmak (satır içidir)", "Her şeyi div ile yapmak (anlamsal etiketler sonraki konuda)"], sorular: [["div yerine p kullansam?", "p paragraf anlamı taşır; anlamsız gruplama için div kullanılır."], ["Kutular neden alt alta?", "div bloktur; yan yana dizmek için CSS (float/flex) gerekir."]] },
+
+
   { tur: "bilgi", baslik: "div ve span",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "📦 &lt;div&gt;", alt: "Blok kutu. Yeni satırda başlar, tam genişlik. İçine her şey girer." },

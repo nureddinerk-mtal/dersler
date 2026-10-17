@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "display, float/clear, z-index, position (relative, absolute, fixed). Göreceli içinde mutlak konum fikri kart tasarımlarının temeli.", akis: ["display ve float", "position türleri", "Kaydırma oku ve kart tasarımı"], hatalar: ["absolute elemanın bütün sayfaya göre konumlanması (ebeveyne position:relative verilmemiş)", "float sonrası clear unutulup alttaki içeriğin kayması", "z-index'in position'sız çalışmaması"], sorular: [["fixed ile absolute farkı?", "fixed sayfa kaysa da ekranda yerinde kalır."], ["float hâlâ kullanılıyor mu?", "Yerleşim için yerini flex/grid'e bıraktı; resim çevresinde yazı için hâlâ işe yarar."]] },
+
+
   { tur: "bilgi", baslik: "display: yerleşim seviyesi",
     gorsel: { tip: "html", icerik: `<div class="etk">
       <div><code>none</code> <span>görünmez, yer de kaplamaz</span></div>

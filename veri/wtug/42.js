@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Proje klasörleri ve ara katman (middleware). Configure'daki sıra = isteğin geçtiği sıra. Kitaptaki Map tablosunda yazım hatası var, düzelttik.", akis: ["Klasör ağacı ve önemli dosyalar", "_Layout ve @RenderBody", "Use / Run / Map örnekleri"], hatalar: ["Statik dosyayı wwwroot dışına koymak", "UseStaticFiles'ı kaldırıp CSS'in yüklenmemesi", "app.Run'dan sonra yazılan katmanların çalışmaması"], sorular: [["Program.cs ile Startup.cs farkı?", "Program uygulamayı başlatır; Startup servisleri ve işlem hattını ayarlar. (.NET 6+ ile ikisi tek dosyada birleşti.)"], ["~ işareti ne?", "wwwroot klasörünün kısaltması."]] },
+
+
   { tur: "bilgi", baslik: "MVC projesinin içi",
     gorsel: { tip: "agac", kok: { ad: "mvc_test", cocuklar: [
       { ad: ".vscode", alt: "launch.json, tasks.json" }, { ad: "bin", alt: "derlenmiş dosyalar" },

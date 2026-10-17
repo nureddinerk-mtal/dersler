@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "HTML5 iskeleti (doctype, html, head, body) ezberlenmeli; sonraki tüm konularda her sayfanın başı bu. viewport satırı telefonda düzgün görünmenin şartı.", akis: ["İskeleti tahtaya birlikte yaz, girintiyi göster", "VS Code'da ! + Tab kısayolu", "Üç sayfa uygulaması"], hatalar: ["title'ı body içine yazmak", "Türkçe karakterler bozuk çıkıyor: meta charset=\"utf-8\" unutulmuş", "Dosya adında boşluk ve Türkçe karakter kullanmak"], sorular: [["! + Tab varken neden ezberliyoruz?", "Sınavda ve hata ararken hangi satırın ne işe yaradığını bilmek gerekir."], ["head içindekiler neden görünmüyor?", "head tarayıcıya bilgi verir; sayfada görünen her şey body içindedir."]] },
+
+
   { tur: "bilgi", baslik: "HTML sitenin kaba inşaatıdır",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "🧱 HTML", alt: "Kaba inşaat: duvarlar, odalar (yapı)" },

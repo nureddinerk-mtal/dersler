@@ -71,6 +71,17 @@ SLAYT.turler.test = { etiket: "✅ Kendini dene", ciz: s => `
       </div>
     </div>`).join("")}` };
 
+// 🧑‍🏫 ÖĞRETMEN NOTU: sadece ?hoca ile açılan öğretmen modunda görünür
+// { tur:"hoca", ozet, akis:[...], hatalar:[...], sorular:[["soru","cevap"],...], kod, not }
+const hListe = (baslik, l) => l && l.length ? `<div class="h-bolum"><h3>${baslik}</h3><ul>${l.map(x => `<li>${x}</li>`).join("")}</ul></div>` : "";
+SLAYT.turler.hoca = { etiket: "🧑‍🏫 Öğretmen notu · Öğrenciler görmez", ciz: s => `
+  <h2>${s.baslik || "Bu konuda ne anlatıyoruz?"}</h2>
+  ${s.ozet ? `<p class="metin">${s.ozet}</p>` : ""}
+  ${hListe("⏱️ Ders akışı", s.akis)}
+  ${hListe("⚠️ Sık yapılan hatalar", s.hatalar)}
+  ${s.sorular ? `<div class="h-bolum"><h3>🙋 Öğrenci sorarsa</h3>${s.sorular.map(q => `<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("")}</div>` : ""}
+  ${s.kod ? `<pre class="kod">${kodRenk(s.kod)}</pre>` : ""}${not(s)}` };
+
 // Test seçeneklerine tıklama
 document.addEventListener("click", e => {
   const b = e.target.closest(".secenek");

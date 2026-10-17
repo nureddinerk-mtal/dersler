@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "var, veri tipleri, operatörler. \"1\"+\"98\"+\"8\" = \"1988\" örneği tip kavramını çok iyi oturtuyor. = ile == farkı vurgulanmalı.", akis: ["Değişken = etiketli kutu", "Veri tipleri ve metinsel toplama", "Operatörler canlı örneği"], hatalar: ["Sayıyı tırnak içinde yazıp toplamak", "Değişken adında boşluk ya da tire kullanmak", "= ile == karıştırmak"], sorular: [["Kutudan gelen sayı neden toplanmıyor?", "value her zaman metindir; Number(…) ya da parseInt ile sayıya çevrilir."], ["let ve const?", "Modern yazım; kitap var kullanıyor, ikisi de olur."]] },
+
+
   { tur: "bilgi", baslik: "Değişken: etiketli kutu",
     gorsel: { tip: "html", icerik: `<div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-family:Consolas,monospace">
       ${[["sayi","52","#2f80ed"],["sehir","\"Ordu\"","#27ae60"],["tercih","true","#f2994a"]].map(k=>`<div style="text-align:center"><div style="border:3px solid ${k[2]};border-top:none;border-radius:0 0 10px 10px;padding:16px 18px;min-width:90px;font-size:1.1rem">${k[1]}</div><div style="margin-top:4px;font-weight:bold;color:${k[2]}">${k[0]}</div></div>`).join("")}</div>` },

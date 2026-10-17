@@ -3,6 +3,9 @@ var G = "gorsel/wtug/";
 var JQ = '<script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>';
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "setTimeout/setInterval ve jQuery. jQuery bugün azalan kullanımda ama Bootstrap 4 ve kitap için gerekli; $ ile kısa seçici mantığı yeter.", akis: ["İki zamanlayıcı ve geri sayım", "Melodi uygulaması", "jQuery seçici, efekt, içerik fonksiyonları"], hatalar: ["jQuery bağlantısını eklemeden $ kullanmak ($ is not defined)", "ready fonksiyonunu unutmak", "clearInterval için zamanlayıcıyı değişkene atamamak"], sorular: [["jQuery hâlâ kullanılıyor mu?", "Eski projelerde çok; yeni projelerde saf JS ya da React/Vue tercih ediliyor."], ["1000 neden 1 saniye?", "Süre milisaniye cinsindendir."]] },
+
+
   { tur: "bilgi", baslik: "İki zamanlayıcı",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "⏱️ setTimeout", alt: "Süre dolunca bir kez çalışır" },

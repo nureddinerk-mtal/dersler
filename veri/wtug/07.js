@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "ol, ul, dl ve iç içe liste. İç içe listede alt liste li'nin İÇİNE yazılır; en çok burada hata yapılıyor.", akis: ["Üç liste türü", "type, start, reversed", "İç içe liste uygulamaları (teacher EK örnekleri)"], hatalar: ["Alt ul'yi li'nin dışına, doğrudan ul içine yazmak", "li'yi ul/ol dışında kullanmak", "type=\"I\" ile type=\"i\" farkını kaçırmak"], sorular: [["Madde işaretini nasıl değiştiririm?", "ul'de CSS list-style-type ile (CSS konusunda göreceğiz)."], ["dl ne zaman kullanılır?", "Terim–açıklama çiftleri için: sözlük, SSS gibi."]] },
+
+
   { tur: "bilgi", baslik: "Üç çeşit liste",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "&lt;ol&gt; sıralı", alt: "1. 2. 3. numaralı" },

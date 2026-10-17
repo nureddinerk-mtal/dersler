@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Olay (onclick vb.) + fonksiyon. Parametre ve return mantığı programlama temeli; 11E Seçmeli Programlama dersiyle bağ kurabilirsiniz.", akis: ["Olay tablosu", "Gece/gündüz canlı örneği", "Galeri, kenar, kare, mesaj uygulamaları"], hatalar: ["onclick=\"fonksiyon\" yazıp parantezi unutmak", "Fonksiyon adında büyük-küçük harf uyuşmazlığı", "return'den sonra kod yazıp çalışmasını beklemek"], sorular: [["this ne demek?", "Olayı tetikleyen elemanın kendisi."], ["Fonksiyonu nereye yazmalıyım?", "Çağrılmadan önce tanımlı olması yeter; genelde script içinde en üstte."]] },
+
+
   { tur: "bilgi", baslik: "Olay (event)",
     metin: "Kullanıcı bir şey yapar, eleman kodu çalıştırır.",
     gorsel: { tip: "html", icerik: `<div class="etk">

@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Etiket, #id, .class ve çoklu seçici. id sayfada tek, class çok kez kullanılır. Ağaç (DOM) kavramı burada atılıyor, JS'te tekrar karşımıza çıkacak.", akis: ["HTML ağacı", "Seçici türleri", "Uygulamalar (harfler, galeri, JSCRIPT)"], hatalar: ["CSS'te # ve . karıştırmak", "class=\".kutu\" yazmak (HTML'de nokta yazılmaz)", "Aynı id'yi birden çok elemana vermek"], sorular: [["Bir elemana birden fazla class verebilir miyim?", "Evet, boşlukla: class=\"kutu kirmizi\"."], ["id mi class mı?", "Tek eleman ve JS ile seçilecekse id; ortak stil için class."]] },
+
+
   { tur: "bilgi", baslik: "Seçici: kimi boyayacağım?",
     gorsel: { tip: "parcala", parcalar: [
       { yazi: "p", etiket: "seçici" }, { yazi: "{", etiket: "" },

@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Doğrulama nitelikleri, ModelState.IsValid ve Tag Helper'lar. Sunucuda doğrulama şart, istemci tarafı sadece kolaylık.", akis: ["Nitelik panosu", "Kullanıcı kaydı ve hata özeti", "Tag Helper'lar ve CSRF token"], hatalar: ["using System.ComponentModel.DataAnnotations eksik", "Hata olunca View(kullanici) yerine View() döndürüp formun boşalması", "_ViewImports'taki addTagHelper satırını silmek"], sorular: [["JS ile kontrol ettik, sunucuda neden tekrar?", "JS kapatılabilir ya da istek doğrudan gönderilebilir."], ["CSRF nedir?", "Başka bir sitenin, oturum açık kullanıcı adına sahte form göndermesi; token engeller."]] },
+
+
   { tur: "bilgi", baslik: "Doğrulama: iki taraf",
     gorsel: { tip: "ikili", ok: "＋",
       sol: { baslik: "🖥️ İstemci (tarayıcı)", gorsel: { tip: "html", icerik: "<ul style='margin:0;padding-left:18px'><li>JavaScript ile</li><li>Hızlı, sunucuyu yormaz</li><li>Kapatılabilir ⚠️</li></ul>" } },

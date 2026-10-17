@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Bootstrap: hazır sınıflarla hızlı ve duyarlı tasarım. Kitap 4.6 kullanıyor, biz de. Grid'in 12 sütun mantığı ve col-md- gibi kırılımlar ana hedef.", akis: ["CDN bağlantısı (her sayfada aynı şablon)", "Konteyner ve renk sınıfları", "Beş ekranda altı kutu"], hatalar: ["CSS link'ini ya da JS dosyalarını unutmak", "Sütunları row olmadan yazmak", "İnternet yokken CDN'in yüklenmemesi"], sorular: [["Bootstrap 5 kullansak?", "Olur ama kitap 4.6; bazı sınıf adları değişti (data-toggle → data-bs-toggle)."], ["Toplam 12'yi geçerse?", "Fazla sütun alt satıra iner."]] },
+
+
   { tur: "bilgi", baslik: "Bootstrap nedir?",
     metin: "Hazır CSS sınıfları ve JavaScript efektleri olan, en çok tercih edilen CSS çatısı.",
     gorsel: { tip: "kartlar", kartlar: [

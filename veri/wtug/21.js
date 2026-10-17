@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Kullanılabilirlik, site haritası, güncellik, güvenilirlik ve duyarlı tasarım fikri. 28'deki medya sorgusu ve Bootstrap'in neden gerektiği burada anlaşılır.", akis: ["İlkeler", "Site haritası çizimi", "Kitabın birim soruları"], hatalar: ["Site haritasını sayfa listesi sanmak (hiyerarşi gösterir)", "Duyarlı tasarımı ayrı bir mobil site sanmak"], sorular: [["Telefonda nasıl görünür, nasıl test ederim?", "Tarayıcıda F12 → telefon simgesi (cihaz araç çubuğu)."], ["Erişilebilirlik ne demek?", "Engelli kullanıcıların da siteyi kullanabilmesi: alt metin, kontrast, klavye ile gezinme."]] },
+
+
   { tur: "bilgi", baslik: "4. İşlevsellik ve kullanılabilirlik",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "⚡ Hızlı açılır", alt: "Sayfalar beklemeden yüklenir" },

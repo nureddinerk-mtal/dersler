@@ -2,6 +2,8 @@
 window.KONU = {
   slaytlar: [
 
+  { tur: "hoca", ozet: "Öğrenci internetin bir 'adres + depo' sistemi olduğunu kavrasın: alan adı adrestir, hosting dosyaların durduğu yerdir, DNS adresi IP'ye çevirir. Kod yok, kavram dersi.", akis: ["Açılış: “Tarayıcıya meb.gov.tr yazınca ne olur?” sorusu", "Kavram slaytları + alan adını parçalama", "Eşleştirme uygulaması ve test"], hatalar: ["Web sayfası ile web sitesini karıştırmak (sayfa = tek dosya, site = sayfalar topluluğu)", "Alan adını satın alınca sitenin yayına girdiğini sanmak; hosting de gerekir", "www'yi alan adının zorunlu parçası sanmak"], sorular: [["Alan adı bir kez alınınca sonsuza kadar bizim mi?", "Hayır, kiralanır; genelde yıllık yenilenir. Yenilenmezse başkası alabilir."], ["Kendi bilgisayarım hosting olabilir mi?", "Olabilir ama 7/24 açık, sabit IP'li ve güvenli olmalı; bu yüzden firmalardan kiralanır."]] },
+
     { tur: "bilgi", baslik: "Web sayfası mı, web sitesi mi?",
       gorsel: [
         { tip: "kartlar", kartlar: [

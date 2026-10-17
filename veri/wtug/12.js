@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "img boş etikettir, src yolu en kritik kısım. Göreli yol (resimler/kedi.jpg) mantığı oturmalı; ileride CSS ve JS dosyalarında da aynısı.", akis: ["Klasör düzeni (önce klasör, sonra kod)", "img özellikleri (alt, width, height)", "Alt klasörden resim"], hatalar: ["Resim görünmüyor: yol ya da uzantı yanlış (.JPG ≠ .jpg GitHub'da)", "Masaüstü yolu yazmak: C:\\Users\\… (başka bilgisayarda çalışmaz)", "alt özelliğini boş bırakmak"], sorular: [["Resim bende çıkıyor, arkadaşımda çıkmıyor?", "Mutlak yol kullanmışsın ya da resmi klasöre koymamışsın."], ["alt ne işe yarar?", "Resim açılmazsa yazı görünür; ekran okuyucular bunu okur."]] },
+
+
   { tur: "bilgi", baslik: "Önce klasör düzeni",
     metin: "Resim, video, ses ayrı klasörlerde durursa site düzenli olur.",
     gorsel: { tip: "agac", kok: { ad: "📁 sitem", cocuklar: [

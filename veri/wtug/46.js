@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "NuGet paketleri, EF Core, DbContext ve migration. Okulda LocalDB kurulumu sorun çıkarırsa SQLite seçeneği (meraklısına slaytı) çok rahatlatır.", akis: ["NuGet ve paket komutları", "EF Core ve LocalDB", "DbContext, DbSet, migration"], hatalar: ["dotnet ef tanınmıyor: aracı global kurmamak", "DbSet eklemeden migration yapmak (tablo oluşmaz)", "Bağlantı cümlesinde \\\\ yerine tek \\ yazmak"], sorular: [["Migration ne işe yarar?", "Modeldeki değişikliği veri tabanına adım adım yansıtır, geri alınabilir."], ["SQL bilmeden veri tabanı mı?", "EF Core C# kodunu SQL'e kendisi çevirir; ama temel SQL bilmek yine faydalıdır."]] },
+
+
   { tur: "bilgi", baslik: "NuGet: .NET'in paket yöneticisi",
     gorsel: { tip: "akis", adimlar: [
       { simge: "👩‍💻", yazi: "Geliştirici", alt: "kodu paketler (.nupkg)" },

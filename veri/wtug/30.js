@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Tipografi, tablo, kenarlık, jumbotron, uyarı, buton, badge. Sınıfları ezberlemek yerine getbootstrap.com belgelerinden kopyalamayı öğretin.", akis: ["Sınıf panoları", "Tablo ve buton örnekleri", "Bileşen panosu uygulaması"], hatalar: ["btn sınıfını unutup sadece btn-primary yazmak", "table sınıfı olmadan table-striped yazmak"], sorular: [["Bu sınıfları ezberlemeli miyiz?", "Hayır, belgeden bakılır; mantığı bilmek yeter."], ["Kendi rengimi verebilir miyim?", "Evet, kendi CSS'inle sınıfın üzerine yazabilirsin."]] },
+
+
   { tur: "bilgi", baslik: "Tipografi elemanları",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "&lt;small&gt;", alt: "Başlık içinde açık renkli küçük yazı" },

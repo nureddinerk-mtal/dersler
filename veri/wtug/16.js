@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Resme tıklanan bağlantı, mailto: ve dosya indirme. Bağlantı metni “buraya tıklayın” değil, gideceği yeri anlatan metin olmalı.", akis: ["Resim bağlantısı", "E-posta ve dosya bağlantısı", "İyi bağlantı metni"], hatalar: ["mailto'da boşluk bırakmak", "PDF'nin indirilmek yerine açılması (download özelliği)"], sorular: [["mailto her bilgisayarda çalışır mı?", "Bilgisayarda e-posta programı kuruluysa açılır; değilse çalışmayabilir."], ["Konu satırını da doldurabilir miyim?", "Evet: mailto:adres?subject=Merhaba"]] },
+
+
   { tur: "bilgi", baslik: "Neye tıklanır?",
     metin: "a etiketinin içine sadece yazı değil, her şey konabilir.",
     gorsel: { tip: "kartlar", kartlar: [

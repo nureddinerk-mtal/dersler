@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "a etiketi ve href. Mutlak (https://…) ve göreli adres ayrımı, target=\"_blank\". Bağlantı renkleri ziyaret durumuna göre değişir.", akis: ["URL'nin parçaları", "target değerleri", "Yedi çeşit bağlantı uygulaması"], hatalar: ["Dış siteye https:// yazmadan bağlantı vermek (göreli sanılır, 404)", "href yerine src yazmak"], sorular: [["Bağlantının altındaki çizgiyi kaldırabilir miyim?", "Evet, CSS text-decoration:none ile."], ["_blank güvenli mi?", "Dış sitelerde rel=\"noopener\" eklemek iyi alışkanlıktır."]] },
+
+
   { tur: "bilgi", baslik: "&lt;a&gt; = çıpa",
     metin: "<b>a</b>: anchor (çıpa). Tıklanınca başka bir yere götürür.",
     gorsel: { tip: "parcala", parcalar: [

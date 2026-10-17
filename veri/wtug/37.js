@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Sayaç, for, while, do-while. İç içe for ile satranç tahtası en etkileyici örnek; kâğıtta i ve j değerlerini tablo yapıp izletin.", akis: ["Döngü akışı", "Sayaç ve for", "Kutular, satranç, while uygulamaları"], hatalar: ["Sonsuz döngü (artırmayı unutmak) — sekme donar, kapatıp aç", "i&lt;=8 yazıp 9 tur döndürmek", "for içinde ; yerine , kullanmak"], sorular: [["Sayfa dondu?", "Sonsuz döngü; sekmeyi kapat, artırma satırını kontrol et."], ["for mu while mı?", "Tekrar sayısı belliyse for, şarta bağlıysa while."]] },
+
+
   { tur: "bilgi", baslik: "Döngü: tekrar et",
     gorsel: { tip: "akis", adimlar: [
       { simge: "🏁", yazi: "Başla", alt: "i = 0" }, { simge: "❓", yazi: "Şart", alt: "i &lt; 8 ?" },

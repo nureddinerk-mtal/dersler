@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Arka uca geçiş. .NET SDK kurulumu ve ilk MVC projesi. Laboratuvar bilgisayarlarında SDK ve VS Code C# eklentisi önceden kurulu olmalı (Deep Freeze!).", akis: ["Ön uç – arka uç hatırlatma", "SDK / Runtime farkı", "dotnet new mvc ile ilk proje"], hatalar: ["dotnet komutu tanınmıyor: SDK kurulu değil ya da terminal yeniden açılmamış", "Proje klasörüne girmeden (cd) komut çalıştırmak", "HTTPS sertifika uyarısında takılmak (dotnet dev-certs https --trust)"], sorular: [["Neden C#?", ".NET'in ana dili; Java'ya benzer, iş piyasasında çok aranır."], ["Visual Studio mu VS Code mu?", "Kitap VS Code kullanıyor; hafif ve ücretsiz."]] },
+
+
   { tur: "bilgi", baslik: "Ön uç ve arka uç",
     gorsel: { tip: "akis", adimlar: [
       { simge: "🖥️", yazi: "Tarayıcı", alt: "HTML, CSS, JS (ön uç)" },

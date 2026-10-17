@@ -3,6 +3,9 @@ var G = "gorsel/wtug/";
 var L = "https://localhost:5001";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Yayınlama (publish, IIS) ve web servisler (REST API). Postman ile istek göndermek öğrencilere çok somut geliyor. Dersin özeti: ön uç fetch ile API'den veri alır.", akis: ["Publish türleri ve IIS adımları", "REST – SOAP, HTTP metotları", "İlk API ve katmanlı API"], hatalar: ["IIS'te Hosting Bundle kurmadan 500.19 hatası almak", "ControllerBase yerine Controller kullanmak (çalışır ama gereksiz)", "Postman'de Content-Type'ı application/json yapmamak"], sorular: [["API'yi tarayıcıdan deneyebilir miyim?", "GET isteklerini evet; POST, PUT, DELETE için Postman gibi bir araç gerekir."], ["Okulun sitesini böyle mi yayınlıyorlar?", "Benzer şekilde: dosyalar sunucuya kopyalanır, alan adı sunucunun IP'sine yönlendirilir (1. konu)."]] },
+
+
   { tur: "bilgi", baslik: "Yayınlama (publish)",
     metin: "Bilgisayarda geliştirilen uygulamayı sunucuya hazırlayıp dünyaya açmak.",
     gorsel: { tip: "akis", adimlar: [

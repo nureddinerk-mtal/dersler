@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "video ve audio etiketleri, birden çok kaynak (source). controls olmadan oynatma düğmesi görünmez; autoplay çoğu tarayıcıda sadece muted ile çalışır.", akis: ["Etiket ve özellikler", "Kapak resimli video", "İki video / iki ses uygulaması"], hatalar: ["controls'u unutup videonun bozuk olduğunu sanmak", "autoplay'in sessize almadan çalışmaması", "Büyük video dosyasını GitHub'a yüklemeye çalışmak (100 MB sınırı)"], sorular: [["YouTube videosunu nasıl koyarım?", "YouTube → Paylaş → Yerleştir kodu (iframe) kopyalanır."], ["Neden iki source yazıyoruz?", "Bir tarayıcı bir biçimi açamazsa diğerini dener."]] },
+
+
   { tur: "bilgi", baslik: "HTML5 ile video ve ses",
     gorsel: { tip: "kartlar", kartlar: [
       { ust: "🎬 &lt;video&gt;", alt: "Sayfaya video oynatıcı ekler" },

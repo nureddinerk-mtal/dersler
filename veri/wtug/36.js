@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Dizi: tek ad, çok değer, 0'dan başlayan sıra. push, pop, sort, indexOf. Kitapta length() hatası var, düzelttik.", akis: ["Dizi görseli", "Fonksiyonlar canlı örneği", "Not ortalaması ve sözlük"], hatalar: ["İlk elemanı [1] sanmak", "length'i fonksiyon gibi yazmak", "Sayıları sort() ile sıralayınca 10'un 2'den önce gelmesi"], sorular: [["Sayıları doğru sıralamak için?", "sort((a,b)=>a-b)."], ["indexOf -1 ne demek?", "Aranan eleman dizide yok."]] },
+
+
   { tur: "bilgi", baslik: "Dizi: tek ad, çok değer",
     gorsel: { tip: "html", icerik: `<div style="font-family:Consolas,monospace;text-align:center"><div style="font-weight:bold;margin-bottom:6px">sehirler</div><div style="display:flex;justify-content:center;flex-wrap:wrap">
       ${["İzmir","İstanbul","Ankara","Bursa","Ordu"].map((s,i)=>`<div><div style="border:2px solid #2f80ed;padding:12px 10px;min-width:70px;background:#eaf2fd">"${s}"</div><div style="color:#eb5757;font-weight:bold">[${i}]</div></div>`).join("")}</div></div>` },

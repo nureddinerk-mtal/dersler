@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "Sayfa içi bağlantı (#id) ve sayfalar arası bağlantı. Beş sayfalık site uygulaması dersin ilk 'gerçek site' deneyimi; tüm sayfalar aynı klasörde olmalı.", akis: ["Çıpa mantığı: id ver, #id ile git", "İçindekiler", "Beş sayfalık site (sayfalar oklarla gösteriliyor)"], hatalar: ["href=\"#bolum1\" yazıp hedefe id yerine name/class vermek", "Sayfa adlarında büyük-küçük harf tutarsızlığı (Hakkinda.html ≠ hakkinda.html)"], sorular: [["Başka sayfanın ortasına gidebilir miyim?", "Evet: sayfa2.html#iletisim"], ["Sayfa en üste gitsin istiyorum?", "href=\"#\" ya da en üstteki elemana id verip ona bağla."]] },
+
+
   { tur: "bilgi", baslik: "Sayfa içi bağlantı (çıpa)",
     metin: "Uzun sayfada tıklayınca aynı sayfanın başka bölümüne atlar.",
     gorsel: { tip: "akis", adimlar: [

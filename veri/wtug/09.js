@@ -2,6 +2,9 @@
 var G = "gorsel/wtug/";
 window.KONU = { slaytlar: [
 
+  { tur: "hoca", ozet: "colspan yana, rowspan aşağı birleştirir. Kural: birleştirilen hücreler sonraki satırlarda/sütunlarda YAZILMAZ. Kareli kâğıtta çizerek çalıştırmak çok işe yarıyor.", akis: ["Hücre sayma kuralı", "Kitap şeması ve bulmacalar (EK)", "Ders programı ve kütüphane örnekleri"], hatalar: ["rowspan verilen hücreyi alt satırda yeniden yazmak (tablo sağa taşar)", "colspan ile rowspan'i karıştırmak"], sorular: [["Hem colspan hem rowspan aynı hücrede olur mu?", "Evet, hücre hem yana hem aşağı yayılır."], ["Tablom sağa taştı?", "Bir satırda fazla hücre var; birleştirilen hücreyi tekrar yazmışsın."]] },
+
+
   { tur: "bilgi", baslik: "colspan yana, rowspan aşağı",
     gorsel: { tip: "ikili",
       sol: { baslik: "colspan=\"2\" ➡️", gorsel: { tip: "html", icerik: `<table style="border-collapse:collapse;margin:0 auto;text-align:center;font-family:Consolas,monospace">

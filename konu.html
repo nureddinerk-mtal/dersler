@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Konu</title>
-  <link rel="stylesheet" href="css/ortak.css?v=5">
+  <link rel="stylesheet" href="css/ortak.css?v=6">
 </head>
 <body class="oynatici">
 
@@ -22,10 +22,10 @@
     <button id="sonraki">İleri ►</button>
   </nav>
 
-  <script src="veri/dersler.js?v=5"></script>
-  <script src="js/ortak.js?v=5"></script>
-  <script src="js/gorseller.js?v=5"></script>
-  <script src="js/slaytlar.js?v=5"></script>
+  <script src="veri/dersler.js?v=6"></script>
+  <script src="js/ortak.js?v=6"></script>
+  <script src="js/gorseller.js?v=6"></script>
+  <script src="js/slaytlar.js?v=6"></script>
   <script>
     const sayfa = document.getElementById("sayfa");
     const ders = dersBul(param("d"));
@@ -45,7 +45,7 @@
           return yukle(`veri/${ders.kod}/${no}.js`);
         })
         .then(() => {
-          slaytlar = window.KONU.slaytlar;
+          slaytlar = window.KONU.slaytlar.filter(s => s.tur !== "hoca" || HOCA);
           document.title = konu.no + " · " + konu.baslik;
           document.getElementById("baslik").textContent = konu.no + " · " + konu.baslik;
           sira = Math.min(Math.max(parseInt(location.hash.slice(1)) - 1 || 0, 0), slaytlar.length - 1);
@@ -55,7 +55,7 @@
     }
 
     function goster() {
-      sayfa.innerHTML = `<article class="slayt">${SLAYT.ciz(slaytlar[sira])}</article>`;
+      sayfa.innerHTML = `<article class="slayt">${konu.ek ? `<div class="ek-uyari">📎 Kitap dışı konu · Sınavda sorumlu değilsiniz</div>` : ""}${SLAYT.ciz(slaytlar[sira])}</article>`;
       document.getElementById("sayac").textContent = `${sira + 1} / ${slaytlar.length}`;
       document.getElementById("cubuk").style.width = ((sira + 1) / slaytlar.length * 100) + "%";
       history.replaceState(null, "", "#" + (sira + 1));
