@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konu</title>
+  <link rel="stylesheet" href="css/ortak.css">
+</head>
+<body class="oynatici">
+
+  <header class="o-ust">
+    <a class="geri" id="listeye" href="index.html">← Konular</a>
+    <div class="o-baslik" id="baslik"></div>
+    <div class="o-sayac" id="sayac"></div>
+  </header>
+  <div class="ilerleme"><div id="cubuk"></div></div>
+
+  <main class="sayfa" id="sayfa"></main>
+
+  <nav class="o-alt">
+    <button id="onceki">◄ Geri</button>
+    <button id="sonraki">İleri ►</button>
+  </nav>
+
+  <script src="veri/dersler.js"></script>
+  <script src="js/ortak.js"></script>
+  <script src="js/gorseller.js"></script>
+  <script src="js/slaytlar.js"></script>
+  <script>
+    const sayfa = document.getElementById("sayfa");
+    const ders = dersBul(param("d"));
+    const no = param("k");
+    let slaytlar = [], sira = 0, konular = [], konu;
+
+    if (!ders) uyari(sayfa, "Ders bulunamadı.");
+    else {
+      document.documentElement.style.setProperty("--renk", ders.renk);
+      document.getElementById("listeye").href = "ders.html?d=" + ders.kod;
+
+      yukle(`veri/${ders.kod}/konular.js`)
+        .then(() => {
+          konular = konuListesi();
+          konu = konular.find(k => k.no === no);
+          if (!konu || !konu.hazir) throw new Error();
+          return yukle(`veri/${ders.kod}/${no}.js`);
+        })
+        .then(() => {
+          slaytlar = window.KONU.slaytlar;
+          document.title = konu.no + " · " + konu.baslik;
+          document.getElementById("baslik").textContent = konu.no + " · " + konu.baslik;
+          sira = Math.min(Math.max(parseInt(location.hash.slice(1)) - 1 || 0, 0), slaytlar.length - 1);
+          goster();
+        })
+        .catch(() => uyari(sayfa, "Bu konu henüz hazır değil."));
+    }
+
+    function goster() {
+      sayfa.innerHTML = `<article class="slayt">${SLAYT.ciz(slaytlar[sira])}</article>`;
+      document.getElementById("sayac").textContent = `${sira + 1} / ${slaytlar.length}`;
+      document.getElementById("cubuk").style.width = ((sira + 1) / slaytlar.length * 100) + "%";
+      history.replaceState(null, "", "#" + (sira + 1));
+      document.getElementById("onceki").disabled = sira === 0;
+      document.getElementById("sonraki").textContent =
+        sira < slaytlar.length - 1 ? "İleri ►" : (sonrakiKonu() ? "Sonraki konu ►" : "Konulara dön ►");
+      window.scrollTo(0, 0);
+    }
+
+    function sonrakiKonu() {
+      const i = konular.indexOf(konu);
+      const s = konular[i + 1];
+      return s && s.hazir ? s : null;
+    }
+
+    function ileri() {
+      if (sira < slaytlar.length - 1) { sira++; goster(); return; }
+      const s = sonrakiKonu();
+      location.href = s ? `konu.html?d=${ders.kod}&k=${s.no}` : `ders.html?d=${ders.kod}`;
+    }
+
+    function geri() {
+      if (sira > 0) { sira--; goster(); }
+    }
+
+    document.getElementById("sonraki").onclick = ileri;
+    document.getElementById("onceki").onclick = geri;
+    document.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight") ileri();
+      if (e.key === "ArrowLeft") geri();
+    });
+  </script>
+</body>
+</html>

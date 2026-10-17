@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ders</title>
+  <link rel="stylesheet" href="css/ortak.css">
+</head>
+<body>
+
+  <header class="ders-ust" id="ust">
+    <a class="geri" href="index.html">← Dersler</a>
+  </header>
+
+  <main class="konular" id="alan"></main>
+
+  <script src="veri/dersler.js"></script>
+  <script src="js/ortak.js"></script>
+  <script>
+    const alan = document.getElementById("alan");
+    const ders = dersBul(param("d"));
+
+    if (!ders) {
+      uyari(alan, "Ders bulunamadı.");
+    } else {
+      document.title = ders.ad;
+      document.documentElement.style.setProperty("--renk", ders.renk);
+      document.getElementById("ust").insertAdjacentHTML("beforeend", `
+        <div class="d-simge">${ders.simge}</div>
+        <h1>${ders.ad}</h1>
+        <span class="sinif">${ders.sinif}</span>`);
+
+      yukle(`veri/${ders.kod}/konular.js`).then(() => {
+        alan.innerHTML = window.KONULAR.birimler.map(b => `
+          <section class="birim">
+            <h2>${b.simge} ${b.ad}</h2>
+            ${b.konular.map(k => `
+              <a class="konu ${k.hazir ? "" : "pasif"}" href="konu.html?d=${ders.kod}&k=${k.no}">
+                <span class="no">${k.no}</span>
+                <span class="k-ad">${k.baslik}</span>
+                <span class="k-kitap">${k.hazir ? "📖 " + k.kitap : "Yakında"}</span>
+              </a>`).join("")}
+          </section>`).join("");
+      }).catch(() => uyari(alan, "Bu dersin konuları henüz eklenmedi."));
+    }
+  </script>
+</body>
+</html>

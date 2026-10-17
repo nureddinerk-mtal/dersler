@@ -1,0 +1,70 @@
+// SLAYT TÜRLERİ — konu dosyasındaki her slaytın "tur" alanına göre çizilir
+// Yeni tür eklemek için: SLAYT.turler.yeniTur = { etiket, ciz: s => "<html>" };
+window.SLAYT = {
+  turler: {},
+  ciz(s) {
+    const t = this.turler[s.tur];
+    if (!t) return `<div class="uyari">Bilinmeyen slayt türü: ${kacis(s.tur)}</div>`;
+    return `<div class="etiket e-${s.tur}">${t.etiket}</div>` + t.ciz(s);
+  }
+};
+
+const metin = s => s.metin ? `<p class="metin">${s.metin}</p>` : "";
+const not = s => s.not ? `<div class="not">💡 ${s.not}</div>` : "";
+
+// Kodu renklendirerek gösterir (HTML etiketleri, özellikler, yorumlar)
+function kodRenk(kod) {
+  return kacis(kod)
+    .replace(/(&lt;!--[\s\S]*?--&gt;)/g, '<i class="k-yorum">$1</i>')
+    .replace(/(&lt;\/?)([a-zA-Z0-9!]+)/g, '$1<b class="k-etiket">$2</b>')
+    .replace(/ ([a-zA-Z-]+)=(&quot;.*?&quot;)/g, ' <b class="k-ozellik">$1</b>=<b class="k-deger">$2</b>');
+}
+
+// 📒 BİLGİ: kısa not + görsel
+SLAYT.turler.bilgi = { etiket: "📒 Not al", ciz: s => `
+  <h2>${s.baslik}</h2>${metin(s)}${GORSEL.ciz(s.gorsel)}${not(s)}` };
+
+// 👀 ÖRNEK: kod + (varsa) sonucu
+SLAYT.turler.ornek = { etiket: "👀 Örnek", ciz: s => `
+  <h2>${s.baslik}</h2>${metin(s)}
+  <div class="yanyana">
+    <pre class="kod">${kodRenk(s.kod || "")}</pre>
+    ${s.sonuc ? `<div class="sonuc"><div class="s-baslik">Tarayıcıda</div>${GORSEL.ciz(s.sonuc)}</div>` : ""}
+  </div>${not(s)}` };
+
+// 🛠️ UYGULAMA: sadece hedef görsel + kısa görev. Kodu öğrenci kendisi yazar.
+SLAYT.turler.uygulama = { etiket: "🛠️ Uygulama", ciz: s => `
+  <h2>${s.baslik}</h2>${metin(s)}
+  ${s.gorsel ? `<div class="hedef"><div class="s-baslik">🎯 Bunu oluştur</div>${GORSEL.ciz(s.gorsel)}</div>` : ""}
+  ${s.adimlar ? `<ol class="adimlar">${s.adimlar.map(a => `<li>${a}</li>`).join("")}</ol>` : ""}
+  ${s.kitap ? `<div class="kitap">📖 Takılırsan: kitap ${s.kitap}</div>` : ""}` };
+
+// 🏠 ÖDEV: kitaptaki "Sıra Sizde"
+SLAYT.turler.odev = { etiket: "🏠 Sıra Sizde · Ödev", ciz: s => `
+  <h2>${s.baslik}</h2>${metin(s)}${GORSEL.ciz(s.gorsel)}
+  ${s.kitap ? `<div class="kitap">📖 Kitap ${s.kitap}</div>` : ""}` };
+
+// ✅ TEST: tıkla, doğru mu gör (hiçbir şey kaydedilmez)
+SLAYT.turler.test = { etiket: "✅ Kendini dene", ciz: s => `
+  <h2>${s.baslik || "Kendini dene"}</h2>
+  ${s.sorular.map((q, i) => `
+    <div class="soru" data-dogru="${q.dogru}">
+      <div class="s-metin">${i + 1}. ${q.soru}</div>
+      <div class="secenekler">
+        ${q.secenekler.map((c, j) => `<button class="secenek" data-i="${j}">${c}</button>`).join("")}
+      </div>
+    </div>`).join("")}` };
+
+// Test seçeneklerine tıklama
+document.addEventListener("click", e => {
+  const b = e.target.closest(".secenek");
+  if (!b) return;
+  const soru = b.closest(".soru");
+  if (soru.classList.contains("cevaplandi")) return;
+  soru.classList.add("cevaplandi");
+  const dogru = soru.dataset.dogru;
+  soru.querySelectorAll(".secenek").forEach(x => {
+    if (x.dataset.i === dogru) x.classList.add("dogru");
+  });
+  if (b.dataset.i !== dogru) b.classList.add("yanlis");
+});
