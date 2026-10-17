@@ -156,7 +156,7 @@ body {
 .p-etiket { margin-top: 8px; font-size: .9rem; font-weight: 600; }
 .ayrac { font-size: 2.2rem; font-weight: 700; padding-top: 8px; }
 
-.g-resim img { max-width: 100%; border: 2px solid var(--cizgi); border-radius: 10px; display: block; margin: 0 auto; }
+.g-resim img { max-width: min(100%, 560px); border: 2px solid var(--cizgi); border-radius: 10px; display: block; margin: 0 auto; }
 
 /* ---------- KOD / HEDEF ---------- */
 .yanyana { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
@@ -186,3 +186,81 @@ body {
   .slayt h2 { font-size: 1.35rem; }
   .konu .k-kitap { display: none; }
 }
+
+/* tarayıcı çerçevesi */
+.g-tarayici { border: 1px solid #cfd4dc; border-radius: 10px; overflow: hidden; background: #fff; }
+.t-cubuk { display: flex; align-items: center; gap: 10px; padding: 6px 10px; background: #eef1f5; border-bottom: 1px solid #cfd4dc; }
+.t-nokta { color: #c4c9d1; letter-spacing: 2px; font-size: 12px; }
+.t-adres { flex: 1; background: #fff; border-radius: 12px; padding: 2px 10px; font-size: .8rem; color: #555; }
+.t-cerceve { width: 100%; border: 0; display: block; min-height: 60px; background: #fff; }
+
+/* ikili karşılaştırma */
+.g-ikili { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.i-kutu { flex: 1; min-width: 220px; }
+.i-baslik { font-weight: 700; text-align: center; margin-bottom: 6px; }
+.i-ok { font-size: 1.6rem; color: var(--soluk); }
+.i-kutu .gorsel { margin: 0; }
+.secenek code { font-family: Consolas, monospace; font-size: 1rem; }
+
+/* çok sayfalı site */
+.g-sayfalar { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.g-sayfalar figure { margin: 0; text-align: center; }
+.g-sayfalar img { max-width: 100%; border: 2px solid var(--cizgi); border-radius: 8px; display: block; }
+.g-sayfalar figcaption { font-size: .85rem; font-weight: 700; color: var(--soluk); margin-top: 4px; }
+.s-ana { flex: 1 1 300px; }
+.s-dallar { flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px; }
+.s-dal { display: flex; align-items: center; gap: 8px; }
+.s-dal figure { flex: 1; }
+.s-ok { display: flex; flex-direction: column; align-items: center; min-width: 96px; }
+.s-buton { background: var(--renk); color: #fff; font-size: .8rem; font-weight: 700; padding: 2px 8px; border-radius: 8px; white-space: nowrap; }
+.s-cizgi { font-size: 1.6rem; color: var(--renk); line-height: 1; }
+
+/* veri tabanı tabloları */
+.g-tablo, .g-tablolar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+.vt { border: 2px solid #2d9cdb; border-radius: 10px; overflow: hidden; background: #fff; font-size: .92rem; }
+.vt-ad { background: #2d9cdb; color: #fff; font-weight: 700; padding: 6px 12px; }
+.vt table { border-collapse: collapse; }
+.vt th { background: #e6f4fb; text-align: left; padding: 5px 10px; border-bottom: 1px solid #b9dff2; }
+.vt td { padding: 5px 10px; border-bottom: 1px solid #eef2f5; }
+.vt-ok { display: flex; flex-direction: column; align-items: center; color: #2d9cdb; font-size: 1.6rem; }
+.vt-ok span { font-size: .8rem; font-weight: 700; }
+
+.r-yazi { text-align: center; font-size: .9rem; color: var(--soluk); margin-top: 6px; }
+
+/* iç içe kutular */
+.g-agac { display: flex; justify-content: center; }
+.ag-dugum { border: 2px solid var(--r); border-radius: 10px; padding: 6px 10px 10px; background: color-mix(in srgb, var(--r) 7%, #fff); min-width: 90px; }
+.ag-ad { font-family: Consolas, monospace; font-weight: 700; color: var(--r); font-size: 1.05rem; }
+.ag-alt { font-family: "Segoe UI", sans-serif; font-weight: 400; color: var(--soluk); font-size: .85rem; margin-left: 8px; }
+.ag-cocuk { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.ag-cocuk.yan { flex-direction: row; flex-wrap: wrap; }
+.ag-cocuk.yan > .ag-dugum { flex: 1; }
+
+/* terminal */
+.g-terminal { background: #1f2430; border-radius: 10px; overflow: hidden; }
+.tr-ust { background: #343a48; color: #aab; font-size: .8rem; padding: 4px 12px; }
+.g-terminal pre { color: #e6e6e6; padding: 12px 14px; font-family: Consolas, monospace; font-size: .95rem; white-space: pre-wrap; }
+.g-terminal b { color: #9be38f; font-weight: normal; }
+
+/* api isteği */
+.g-istek { border: 2px solid var(--cizgi); border-radius: 10px; padding: 10px; background: #fff; }
+.is-satir { display: flex; gap: 8px; align-items: center; }
+.is-metot { color: #fff; font-weight: 800; padding: 3px 10px; border-radius: 6px; font-size: .85rem; font-family: Consolas, monospace; }
+.m-GET { background: #27ae60; } .m-POST { background: #f2994a; } .m-PUT { background: #2f80ed; } .m-DELETE { background: #eb5757; }
+.is-adres { flex: 1; font-family: Consolas, monospace; background: #f3f5f8; padding: 4px 10px; border-radius: 6px; }
+.is-etiket { font-size: .8rem; font-weight: 700; color: var(--soluk); margin: 8px 0 2px; }
+.is-kutu { background: #f3f5f8; border-radius: 6px; padding: 8px 10px; font-family: Consolas, monospace; font-size: .9rem; white-space: pre-wrap; }
+.is-kutu.cevap { background: #eaf7ee; }
+
+/* malzeme bağlantıları */
+.malzeme { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-weight: 600; }
+.malzeme a { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border: 2px solid var(--cizgi); border-radius: 8px; text-decoration: none; color: inherit; background: #fff; font-weight: 500; font-size: .9rem; }
+.malzeme a:hover { border-color: var(--renk); }
+.malzeme img { width: 28px; height: 28px; object-fit: cover; border-radius: 4px; }
+.hedef .gorsel + .gorsel { margin-top: 10px; }
+
+.telefon { width: 150px; height: 220px; margin: 0 auto; border: 8px solid #2b2b2b; border-radius: 22px; padding: 14px 10px; background: #fff; font-family: "Times New Roman", serif; overflow: hidden; }
+.etk { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.etk div { background: #fff; border: 2px solid var(--cizgi); border-radius: 10px; padding: 8px 10px; font-size: 1.05rem; }
+.etk code { display: inline-block; min-width: 70px; font-family: Consolas, monospace; color: #1c5fbf; font-weight: 700; }
+.etk span { font-family: "Times New Roman", serif; font-size: 1.15rem; }
