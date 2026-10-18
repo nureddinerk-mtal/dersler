@@ -11,10 +11,18 @@ window.SLAYT = {
 
 const metin = s => s.metin ? `<p class="metin">${s.metin}</p>` : "";
 const not = s => s.not ? `<div class="not">💡 ${s.not}</div>` : "";
-const malzeme = s => s.malzeme ? `<div class="malzeme">🖼️ Resimler: ${s.malzeme.map(m => `<a href="gorsel/malzeme/${m}" download><img src="gorsel/malzeme/${m}" alt="">${m}</a>`).join("")}</div>` : "";
+const resimMi = m => /\.(png|jpe?g|gif|svg|webp)$/i.test(m);
+const malzeme = s => s.malzeme ? `<div class="malzeme">${s.malzeme.every(resimMi) ? "🖼️ Resimler" : "📥 Dosyalar"}: ${s.malzeme.map(m => `<a href="gorsel/malzeme/${m}" download>${resimMi(m) ? `<img src="gorsel/malzeme/${m}" alt="">` : "📄 "}${m}</a>`).join("")}</div>` : "";
 
 // Kodu renklendirerek gösterir (HTML etiketleri, özellikler, yorumlar)
 function kodRenk(kod) {
+  // Python (konu dosyasında dil: "py"): anahtar kelime → metin → # yorum
+  if (window.KOD_DIL === "py") {
+    return kacis(kod)
+      .replace(/\b(import|from|as|def|return|if|elif|else|for|while|in|not|and|or|is|None|True|False|class|with|lambda|try|except|print|range|len)\b/g, '<b class="k-etiket">$1</b>')
+      .replace(/(&quot;[^\n]*?&quot;|'[^'\n]*')/g, '<b class="k-deger">$1</b>')
+      .replace(/(^|\s)(#[^\n]*)/gm, '$1<i class="k-yorum">$2</i>');
+  }
   if (!/^\s*</.test(kod)) {
     // önce anahtar kelimeler, sonra metinler, en son yorumlar (eklenen etiketler bozulmasın)
     return kacis(kod)
@@ -80,7 +88,7 @@ SLAYT.turler.hoca = { etiket: "🧑‍🏫 Öğretmen notu · Öğrenciler görm
   ${hListe("⏱️ Ders akışı", s.akis)}
   ${hListe("⚠️ Sık yapılan hatalar", s.hatalar)}
   ${s.sorular ? `<div class="h-bolum"><h3>🙋 Öğrenci sorarsa</h3>${s.sorular.map(q => `<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("")}</div>` : ""}
-  ${s.kod ? `<pre class="kod">${kodRenk(s.kod)}</pre>` : ""}${not(s)}` };
+  ${s.kod ? `<div class="h-bolum"><details><summary>💻 Kod (çözüm) · açmak için tıkla</summary><pre class="kod">${kodRenk(s.kod)}</pre></details></div>` : ""}${not(s)}` };
 
 // Test seçeneklerine tıklama
 document.addEventListener("click", e => {

@@ -279,3 +279,17 @@ body {
 .ek-etiket { display: block; font-size: .78rem; font-weight: 600; color: #8a5a00; margin-top: 2px; }
 .konu.ek .no { background: #e0a800; }
 .ek-uyari { background: #fff3cd; color: #7a5200; border: 1px solid #f2c94c; border-radius: 8px; padding: 6px 12px; font-size: .9rem; font-weight: 600; margin-bottom: 10px; }
+
+/* Dar ekran taşma düzeltmeleri (v7) */
+.ag-dugum { min-width: 0; }
+.ag-ad { overflow-wrap: anywhere; }
+.ag-alt { display: inline-block; }
+.ag-cocuk.yan > .ag-dugum { flex: 1 1 140px; }
+.secenek { max-width: 100%; text-align: left; }
+.secenek code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.metin code, .not code, .h-bolum code, li code { overflow-wrap: anywhere; }
+pre.kod { overflow-x: auto; max-width: 100%; }
+.gorsel { max-width: 100%; }
+.g-tablo, .g-tablolar, .g-html { overflow-x: auto; }
+.s-metin code { white-space: pre-wrap; word-break: break-all; }
+.kart, .k-ust, .k-alt { min-width: 0; overflow-wrap: anywhere; }
