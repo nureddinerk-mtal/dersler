@@ -38,7 +38,7 @@
               <a class="konu ${k.hazir ? "" : "pasif"} ${k.ek ? "ek" : ""}" href="konu.html?d=${ders.kod}&k=${k.no}">
                 <span class="no">${k.no}</span>
                 <span class="k-ad">${k.baslik}${k.ek ? `<span class="ek-etiket">📎 Kitap dışı · Sınavda sorumlu değilsiniz</span>` : ""}</span>
-                <span class="k-kitap">${!k.hazir ? "Yakında" : k.ek ? "📎 Ek konu" : "📖 " + k.kitap}</span>
+                <span class="k-kitap">${!k.hazir ? "Yakında" : k.ek ? "📎 Ek konu" : (k.hafta ? "🗓️ " + k.hafta + ". hafta · " : "") + "📖 " + k.kitap}</span>
               </a>`).join("")}
           </section>`).join("");
       }).catch(() => uyari(alan, "Bu dersin konuları henüz eklenmedi."));

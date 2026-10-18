@@ -1,0 +1,18 @@
+// YPROJ · 25 · Özgün mobil proje fikri ve müşteri istekleri  (Kitap s. 110 · 14. hafta)
+window.KONU = { dil: "", slaytlar: [
+  { tur: "hoca",
+    ozet: "3.1: Mobil projeler farklıdır: sürekli güncellenen işletim sistemi (Android 10/11/12 farkları), farklı platformlar (iOS, Android; cross platform değilse birbirinde çalışmaz), çok çeşitli ekran boyutları → çok detaylı planlama. Kitap örneği: her ülke için gezilecek yerleri kaydedip listeleyen, kayıtları Firebase bulut sunucuda tutan uygulama. Müşteri istekleri: Android API-23+, çoklu aygıt, çoklu dil (TR, EN), bulut veri tabanı, açılışta logo sonra ana menü, liste → detay (görsel, ülke, bölge, ad, tarihçe, hakkında), sağ üst menüde Giriş Yap, Yer Ekle, Yer Sil, Dil Seçimi; girişten sonra kullanıcı adı ve Çıkış; Ayarlar ileride genişletilebilir; 5 yıllık bakım anlaşması. Kapalı konular: gezi rehberi / gezilecek yerler, resim galerisi. Açık temrinler: mobil oyun, navigasyon, bilişim sözlüğü, yabancı dil eğitimi, akıllı ev ya da öğrencinin fikri. Ölçüt: açılış, liste, detay ve ekleme ekranları; Firebase Authentication + Firestore; fotoğraf varsa Storage.",
+    akis: ["Mobil projeler neden farklı?", "Kapalı konular ve ölçütler", "Yapılmak istenen çalışma", "Müşterinin istekleri", "🧑‍🏫 Fikir onayı"],
+    hatalar: ["<b>Firebase Storage</b> yeni projelerde artık kullandıkça öde (Blaze) planı ve kart bilgisi istiyor. Öğrenciler kart girmesin: fotoğraf gerekiyorsa uygulamanın içindeki hazır görseller ya da görsel adresi (URL) kullanılsın; Authentication ve Firestore ücretsiz planda çalışır.", "Firebase için Google hesabı gerekir; okul hesabı Firebase'e kapalıysa kişisel hesap ya da öğretmenin açtığı ortak projeye ‘editör’ ekleme.", "Android Studio + emülatör en az 8 GB (tercihen 16 GB) RAM ister. Zayıf makinelerde öğrencinin kendi Android telefonu USB hata ayıklamayla kullanılabilir."],
+    sorular: [["iOS için yapabilir miyiz?", "Kitap Android Studio ve Java kullanıyor; bu derste Android."]] },
+  { tur: "bilgi", baslik: "Mobil proje neden farklı?",
+    gorsel: { tip: "kartlar", kartlar: [ { ust: "🔄 İşletim sistemi sürekli güncellenir" }, { ust: "🍏🤖 Farklı platformlar", alt: "iOS, Android" }, { ust: "📱⌚📺 Farklı ekran boyutları" } ] },
+    metin: "Bu yüzden en baştan çok ayrıntılı planlanır." },
+  { tur: "bilgi", baslik: "Seçilemez · En az bu kadar",
+    gorsel: { tip: "ikili", sol: { baslik: "🚫 Kitapta geçenler", gorsel: { tip: "kartlar", kartlar: [ { ust: "Gezi rehberi / gezilecek yerler" }, { ust: "Resim galerisi" } ] } }, sag: { baslik: "✅ Ölçütler", gorsel: { tip: "kartlar", kartlar: [ { ust: "Açılış, liste, detay, ekleme ekranları" }, { ust: "Firebase giriş (Authentication)" }, { ust: "Firebase veri (Firestore)" } ] } }, ok: "·" } },
+  { tur: "adim", baslik: "Yapılmak istenen çalışma ve müşteri istekleri", hafta: "14",
+    kitap: { ozet: "Gezi rehberi için müşterinin isteklerini madde madde yazdı.", gorsel: { tip: "kartlar", kartlar: [ { ust: "Android API-23+" }, { ust: "Telefon ve tablet" }, { ust: "Türkçe, İngilizce" }, { ust: "Bulut veri tabanı" }, { ust: "Logo → ana menü → liste → detay" }, { ust: "Menü: Giriş Yap, Yer Ekle, Yer Sil, Dil" } ] }, sayfa: "s. 110" },
+    sen: { gorsel: { tip: "tablo", sutunlar: ["Başlık", "Senin projen"], satirlar: [["Yapılmak istenen çalışma", "…"], ["Hangi Android sürümü?", "…"], ["Hangi cihazlar?", "…"], ["Ekranlar ve akış", "açılış → … → …"], ["Menüde neler olacak?", "…"], ["Bulut veri tabanında ne tutulacak?", "…"]] } },
+    teslim: { dosya: "P2-25_fikir-istekler", liste: ["Yapılmak istenen çalışmayı belirledim.", "Müşterinin isteklerini belirledim."] },
+    onay: "Hocana göster: mobil fikir onayı almadan devam etme." }
+]};

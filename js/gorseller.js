@@ -392,3 +392,8 @@ GORSEL.tipler.grafik = g => {
   const [W, H, ic] = f(g);
   return `${g.baslik ? `<div class="gr-baslik">${g.baslik}</div>` : ""}<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${g.baslik || g.tur}" font-family="Arial, sans-serif">${ic}</svg>${g.kaynak ? `<div class="gr-kaynak">Kaynak: ${g.kaynak}</div>` : ""}`;
 };
+
+// ── VARLIK / VERİ TABANI ŞEMASI (yproj) ─────────────────────────────────────
+// { tip:"varlik", varliklar:[{ ad:"URUNLER", alanlar:["🔑 urun_kodu", "urun_adi", "🔗 kategori_id"] }], iliskiler:["KATEGORILER 1 ─ n URUNLER"] }
+GORSEL.tipler.varlik = g => `<div class="vr-izgara">${g.varliklar.map((v, i) => `<div class="vr-kutu" style="--r:${v.renk || R[i % R.length]}"><div class="vr-ad">${v.ad}</div>${v.alanlar.map(a => `<div class="vr-alan">${a}</div>`).join("")}</div>`).join("")}</div>
+  ${g.iliskiler ? `<div class="vr-iliski">${g.iliskiler.map(x => `<span>🔗 ${x}</span>`).join("")}</div>` : ""}`;

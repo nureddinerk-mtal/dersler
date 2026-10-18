@@ -1,0 +1,13 @@
+// YPROJ · 48 · Controller ve View'ler, bağlantı ayarı  (Kitap s. 174–179 · 37. hafta)
+window.KONU = { dil: "", slaytlar: [
+  { tur: "hoca",
+    ozet: "7. Uygulama: Controllers sağ tık → Add → Controller → <b>MVC Controller with views, using Entity Framework</b> → Model class ve Data context class seçilir → Add → Views/Etercihs içinde Create, Delete, Details, Edit, Index.cshtml (oluştur, sil, ayrıntı, güncelle, liste). 8. Uygulama: Models/…Context.cs'teki bağlantı dizesi (OnConfiguring) kopyalanır → appsettings.json'a ConnectionStrings eklenir → Program.cs'e AddDbContext satırları eklenir → F5 → adres satırına /etercihs. Sıra Sizde: TercihSecenekleri için Controller ve View'ler → kendi bütün tabloları.",
+    akis: ["Scaffold ile Controller + View", "5 sayfa: Index, Create, Edit, Details, Delete", "appsettings.json ve Program.cs", "F5 ve /tabloadi"],
+    hatalar: ["Program.cs'e eklenen satır <code>var app = builder.Build();</code> satırından ÖNCE olmalı.", "Adres satırına controller adını yazmayı unutmak: /Urunlers gibi (Scaffold çoğul ‘s’ ekler)."],
+    kod: "// appsettings.json\n\"ConnectionStrings\": {\n  \"ProjemVT\": \"Data Source=.\\\\SQLEXPRESS;Initial Catalog=ProjemVT;Integrated Security=True;TrustServerCertificate=True\"\n}\n\n// Program.cs  (builder.Build() satırından önce)\nbuilder.Services.AddDbContext<ProjemVTContext>(options =>\n    options.UseSqlServer(builder.Configuration.GetConnectionString(\"ProjemVT\")));" },
+  { tur: "adim", baslik: "Her tablo için sayfalar", hafta: "37",
+    kitap: { ozet: "Etercih tablosu için Controller ve 5 View oluşturdu, bağlantıyı ayarladı.", gorsel: { tip: "agac", kok: { ad: "📁 Views/Etercihs", cocuklar: [ { ad: "Index", alt: "liste" }, { ad: "Create", alt: "ekle" }, { ad: "Edit", alt: "güncelle" }, { ad: "Details", alt: "ayrıntı" }, { ad: "Delete", alt: "sil" } ] } }, sayfa: "s. 174–179" },
+    sen: { gorsel: { tip: "tarayici", adres: "https://localhost:7001/Tablolars", icerik: "<div style='font-family:Arial'><h3 style='margin:0'>Index</h3><a href='#'>Create New</a><table border='1' cellpadding='4' style='border-collapse:collapse;margin-top:6px'><tr><th>…</th><th>…</th><th></th></tr><tr><td>…</td><td>…</td><td><a href='#'>Edit</a> | <a href='#'>Details</a> | <a href='#'>Delete</a></td></tr></table></div>" },
+      adimlar: ["Her tablo için ‘MVC Controller with views, using Entity Framework’ ekle.", "Bağlantı dizesini appsettings.json'a taşı.", "Program.cs'e AddDbContext satırını ekle.", "F5: her tablonun sayfasında ekle, düzenle, ayrıntı, sil dene."] },
+    teslim: { dosya: "P3-48_sayfalar", liste: ["Controllers ve Views dosyalarının eklendiğini gösterdim.", "Model ve Data Context sınıfını doğru seçtim.", "Her tablonun liste sayfasının ekran görüntüsü"] } }
+]};

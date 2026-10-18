@@ -382,3 +382,22 @@ pre.kod { overflow-x: auto; max-width: 100%; }
 .tf-cerceve.koyu .pw-kutu,.tf-cerceve.koyu .pw-ikonlar span{background:#2a2a2a;color:#eee;border-color:#444}
 .tf-cerceve.koyu .pw-alan span:first-child{color:#aaa}
 .tf-cerceve.koyu .pw-resim small{color:#bbb}
+
+/* ── proje adımı (yproj) ── */
+.rozet{display:inline-block;background:#fff4d6;color:#8a5a00;border:1px solid #f0d48a;border-radius:20px;padding:2px 12px;font-size:.85rem;font-weight:600;margin:-4px 0 10px}
+.ad-kitap{border:1px dashed #c9c2b2;border-radius:10px;padding:8px 12px;margin:10px 0;background:#fbfaf6}
+.ad-kitap summary{cursor:pointer;font-weight:700;color:#6b5e3c}
+.ad-kitap summary span{font-weight:400;color:var(--soluk)}
+.ad-sen{border:2px solid var(--renk);border-radius:12px;padding:10px 14px;margin:12px 0}
+.ad-teslim{background:#eef6ff;border-radius:10px;padding:10px 14px;margin:12px 0}
+.ad-teslim code{display:inline-block;background:#fff;border:1px solid #c8dcf5;border-radius:6px;padding:2px 8px;margin:4px 0;word-break:break-all}
+.ad-teslim ul{list-style:none;padding-left:0;margin:6px 0 0}
+.ad-teslim li{margin:3px 0}
+.ad-onay{background:#fdecea;color:#9b2c1f;border-radius:10px;padding:10px 14px;margin:12px 0;font-weight:700}
+.ad-sen .s-baslik,.ad-teslim .s-baslik{color:#333;margin-bottom:6px}
+.vr-izgara{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.vr-kutu{border:2px solid var(--r);border-radius:8px;background:#fff;overflow:hidden;font-size:.85rem}
+.vr-ad{background:var(--r);color:#fff;font-weight:700;padding:4px 8px}
+.vr-alan{padding:3px 8px;border-top:1px solid #eee;font-family:Consolas,monospace;font-size:.8rem;word-break:break-word}
+.vr-iliski{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.vr-iliski span{background:#f3f0e8;border-radius:12px;padding:2px 10px;font-size:.8rem}

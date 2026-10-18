@@ -1,0 +1,12 @@
+// YPROJ · 19 · Ana sayfa ve ana işlem  (Kitap s. 85–91 · 11. hafta)
+window.KONU = { dil: "", slaytlar: [
+  { tur: "hoca",
+    ozet: "frmAnaSayfa: üstte menüler (menuTedarikci, menuUrun, menuSatis, menuMusteri, menuPersonel), sağda lblPersonelAdSoyad ve lblYetki; mskTxtMusteriTelefon + btnMusteriSec, txtMusteriAdSoyad (pasif), grdUrunListesi (solda), grdSatilacakUrunler (sağda; yalnızca Miktar sütunu düzenlenebilir), btnEkle, btnSil, txtNot, btnSatisYap, txtGenelToplam. Menü tıklanınca ilgili form açılır, kapanınca yeniden listelenir. Hesapla metodu satır toplamı ve genel toplamı hesaplar, miktarı kontrol eder. SATIŞ YAP: satış + satış detayları kaydedilir, stok düşer. Yetkiye göre personel menüsü yalnızca yönetici için.",
+    akis: ["Menüler ve yetki", "Ana işlemin ekranı", "Hesapla metodu", "Ana işlemi kaydet: ana tablo + detay + etkilenen tablo"],
+    hatalar: ["Ana işlemde stok gibi bağlı alanı güncellemeyi unutmak (kitapta satışta stok düşer).", "Miktar stoktan büyükse uyarmamak.", "Yönetici olmayan kullanıcıya kullanıcı işlemleri menüsünü göstermek."] },
+  { tur: "adim", baslik: "Ana sayfa ve ana işlem", hafta: "11",
+    kitap: { ozet: "Ana sayfada menüler, ürün listesi, satış listesi ve SATIŞ YAP.", gorsel: { tip: "pencere", baslik: "Ana Sayfa", menu: ["Tedarikçi", "Ürün", "Satış Detayları", "Müşteri", "Personel"], satirlar: [ { etiket: "Müşteri tel.", deger: "(___) ___ __ __ [SEÇ]" }, { tablo: { sutunlar: ["Ürün", "Fiyat", "Miktar", "Toplam"], satirlar: [["…", "…", "1", "…"]] } }, { etiket: "Genel toplam", deger: "…" } ], dugmeler: ["EKLE", "SİL", "SATIŞ YAP"], vurgu: "SATIŞ YAP" }, sayfa: "s. 85–91" },
+    sen: { metin: "Ana sayfan: menüler + projenin ana işlemi.", gorsel: { tip: "pencere", baslik: "Ana Sayfa", menu: ["…", "…", "…", "Kullanıcılar (yönetici)"], satirlar: [ { metin: "Ana işlem alanı: kim / ne / kaç / ne zaman" }, { tablo: { sutunlar: ["…", "…", "…"], satirlar: [["…", "…", "…"]] } } ], dugmeler: ["EKLE", "SİL", "… YAP"] },
+      adimlar: ["Menüleri yap; tıklanınca ilgili form açılsın, kapanınca liste yenilensin.", "Giriş yapan kullanıcının adını ve rolünü göster; rolüne göre menüyü kısıtla.", "Ana işlem için seçme, listeye ekleme, çıkarma ve hesaplama.", "Kaydet: ana tablo + detay tablosu + etkilenen alanlar (kitapta stok)."] },
+    teslim: { dosya: "P1-19_ana-islem", liste: ["Ana işlemi yaptım, veri tabanındaki kayıtların ekran görüntüsünü yükledim."] } }
+]};
