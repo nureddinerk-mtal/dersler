@@ -318,3 +318,67 @@ pre.kod { overflow-x: auto; max-width: 100%; }
 .ol-bos { color: #889; font-style: italic; }
 .ol-bos::before { content: ""; }
 .ol-yorum { background: #fff6c4; color: #5a4a00; padding: 5px 10px; border-top: 1px solid #e8d77a; }
+
+/* Windows penceresi */
+.g-pencere { max-width: 560px; border: 1px solid #8aa4c8; border-radius: 8px; overflow: hidden; background: #fff; font-size: .88rem; box-shadow: 0 3px 10px #0002; }
+.pw-ust { display: flex; justify-content: space-between; background: #fff; border-bottom: 1px solid #dde3ee; padding: 6px 10px; font-weight: 600; color: #223; gap: 8px; }
+.pw-x { color: #889; letter-spacing: 4px; font-weight: 400; white-space: nowrap; }
+.pw-menu { display: flex; gap: 14px; padding: 3px 10px; border-bottom: 1px solid #eef; font-size: .8rem; color: #445; flex-wrap: wrap; }
+.pw-govde { display: flex; min-width: 0; }
+.pw-sol { background: #f3f6fa; border-right: 1px solid #dde3ee; padding: 6px 0; min-width: 110px; max-width: 40%; font-size: .8rem; }
+.pw-sol div { padding: 3px 10px; overflow-wrap: anywhere; }
+.pw-sol .sec, .pw-liste .sec { background: #cce4f7; }
+.pw-ic { padding: 8px 12px; flex: 1; min-width: 0; }
+.pw-bb { font-weight: 600; color: #1a5fa8; margin: 6px 0 4px; }
+.pw-alan { display: grid; grid-template-columns: minmax(90px, 40%) 1fr; gap: 8px; align-items: center; margin: 4px 0; }
+.pw-kutu { border: 1px solid #a9b6c8; border-radius: 3px; padding: 2px 6px; min-height: 1.4em; font-family: Consolas, monospace; font-size: .85rem; overflow-wrap: anywhere; }
+.pw-sec { margin: 4px 0; }
+.pw-metin { color: #556; font-size: .82rem; margin: 4px 0; }
+.pw-liste { border: 1px solid #a9b6c8; margin: 4px 0; max-width: 100%; }
+.pw-liste div { padding: 2px 8px; overflow-wrap: anywhere; }
+.pw-alt { display: flex; justify-content: flex-end; gap: 8px; padding: 8px 12px; background: #f3f3f3; border-top: 1px solid #e3e3e3; flex-wrap: wrap; }
+.pw-d { border: 1px solid #adadad; background: #e1e1e1; padding: 3px 14px; border-radius: 3px; font-size: .82rem; }
+.pw-d.v { border-color: #0078d7; background: #e5f1fb; box-shadow: inset 0 0 0 1px #0078d7; }
+/* Disk yönetimi */
+.g-disk { max-width: 620px; font-size: .78rem; }
+.dk-satir { display: flex; border: 1px solid #c9d2e3; margin-bottom: 6px; background: #fff; min-width: 0; }
+.dk-bas { display: flex; flex-direction: column; padding: 4px 8px; background: #f1f2f6; min-width: 78px; border-right: 1px solid #c9d2e3; }
+.dk-serit { display: flex; flex: 1; min-width: 0; }
+.dk-b { border-top: 8px solid var(--r); border-right: 1px solid #c9d2e3; padding: 3px 5px; display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
+.dk-gen { border-top-color: #27ae60; padding: 0; outline: 2px solid #27ae60; outline-offset: -2px; }
+.dk-icseri .dk-b { border-top-width: 6px; }
+.dk-lej { display: flex; flex-wrap: wrap; gap: 10px; color: #445; }
+.dk-lej i { display: inline-block; width: 12px; height: 10px; margin-right: 4px; vertical-align: middle; }
+.slayt { overflow-wrap: break-word; }
+.g-disk { overflow-x: auto; }
+.g-disk .dk-b { min-width: 56px; overflow-wrap: normal; word-break: normal; }
+.g-disk .dk-gen { min-width: 112px; }
+
+/* ── pencere ek satırlar + telefon (sos) ── */
+.pw-resim{background:var(--r);border-radius:8px;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:6px 0;font-size:2.2em}
+.pw-resim small{font-size:.38em;color:#555;margin-top:4px;text-align:center;padding:0 6px}
+.pw-dsatir{text-align:right;margin:6px 0}
+.pw-ikonlar{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.pw-ikonlar span{border:1px solid #ccd;border-radius:8px;padding:4px 8px;font-size:.85em;background:#fff}
+.pw-ikonlar span.sec{outline:2px solid #e74c3c;background:#fff4f2}
+.g-telefon{display:flex;justify-content:center}
+.tf-cerceve{width:270px;max-width:100%;border:10px solid #222;border-radius:28px;background:#fff;overflow:hidden;font-family:Arial,sans-serif;font-size:13px;color:#222;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.tf-durum{display:flex;justify-content:space-between;padding:4px 12px;font-size:11px;background:#f4f4f4}
+.tf-ust{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #e5e5e5;font-weight:bold}
+.tf-ust b{font-size:20px;line-height:1}.tf-ust span{flex:1}.tf-ust em{font-style:normal;background:#1a73e8;color:#fff;border-radius:4px;padding:2px 8px;font-size:11px}
+.tf-ekran{padding:8px 12px;min-height:200px}
+.tf-ekran .pw-alan{display:block}.tf-ekran .pw-alan span:first-child{display:block;font-size:11px;color:#666;margin-top:4px}
+.tf-alt{display:flex;justify-content:space-around;border-top:1px solid #e5e5e5;padding:6px 0;font-size:18px}
+.tf-alt span.sec{outline:2px solid #e74c3c;border-radius:6px}
+.tf-cerceve.koyu{background:#181818;color:#eee}.tf-cerceve.koyu .tf-durum{background:#000;color:#ccc}.tf-cerceve.koyu .tf-ust,.tf-cerceve.koyu .tf-alt{border-color:#333}
+.tf-cerceve.koyu .pw-liste div,.tf-cerceve.koyu .pw-sec,.tf-cerceve.koyu .pw-metin{color:#ddd}
+/* ── grafik (sos) ── */
+.g-grafik{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:10px;max-width:620px;margin-left:auto;margin-right:auto}
+.g-grafik svg{width:100%;height:auto;display:block}
+.gr-baslik{font-weight:bold;text-align:center;font-size:.95rem;margin-bottom:4px;color:#333}
+.gr-kaynak{font-size:.75rem;color:#888;text-align:right}
+.pw-ikonlar span{color:#222}
+.tf-ekran .pw-kutu{display:block;width:auto;font-family:inherit;padding:4px 6px;border-radius:4px;margin-top:2px}
+.tf-cerceve.koyu .pw-kutu,.tf-cerceve.koyu .pw-ikonlar span{background:#2a2a2a;color:#eee;border-color:#444}
+.tf-cerceve.koyu .pw-alan span:first-child{color:#aaa}
+.tf-cerceve.koyu .pw-resim small{color:#bbb}
