@@ -11,7 +11,7 @@ window.KONU = { dil: "", slaytlar: [
   { tur: "bilgi", baslik: "Bu derste ne yapacaksın?",
     gorsel: { tip: "akis", adimlar: [ { simge: "🖥️", yazi: "Masaüstü proje", alt: "1. dönem" }, { simge: "📱", yazi: "Mobil proje", alt: "2. dönem" }, { simge: "🌐", yazi: "Web proje", alt: "2. dönem" } ] },
     metin: "Kitaptaki örneği adım adım izle; aynısını değil, <b>kendi özgün</b> projeni yap.",
-    not: "Her adımın teslimini Drive klasörüne yükle. Üç yerde hocandan onay al: fikir, tasarım, sunum." },
+    not: "Her adımın teslimini <a href=\"https://drive.google.com/drive/folders/1oQ3cPRSOIFUoeRBcCFGWPTKmJlJYqnYF\" target=\"_blank\" rel=\"noopener\">Drive klasörüne ↗</a> yükle. Dosya adı: <code>AdSoyad_P1-05_takvim</code> gibi. Üç yerde hocandan onay al: fikir, tasarım, sunum." },
 
   { tur: "bilgi", baslik: "Proje uygulama süreci",
     gorsel: { tip: "akis", adimlar: [ { simge: "🗺️", yazi: "Planlama" }, { simge: "📐", yazi: "Tasarım" }, { simge: "⌨️", yazi: "Kodlama" }, { simge: "🧪", yazi: "Test" }, { simge: "🔧", yazi: "Bakım" } ] },

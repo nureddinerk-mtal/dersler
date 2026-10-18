@@ -4,6 +4,8 @@
 // Her adım: no, baslik, kitap (sayfa), hafta (yıllık plan haftası), hazir
 // İçerik dosyası: veri/yproj/<no>.js · Yeni adım: listeye satır ekle, içerik yazılınca hazir: true yap.
 window.KONULAR = {
+  // Teslim klasörü: adım slaytlarındaki “Teslim” kutusu bu linke gider. Yeni yıl/sınıf için sadece burayı değiştir.
+  teslimLink: "https://drive.google.com/drive/folders/1oQ3cPRSOIFUoeRBcCFGWPTKmJlJYqnYF",
   birimler: [
     { ad: "Bölüm 0 · Proje Hazırlık", simge: "🧭", konular: [
       { no: "01", baslik: "Proje ve proje uygulama süreci",                 kitap: "s. 16–17, 46",  hafta: "1",     hazir: true },

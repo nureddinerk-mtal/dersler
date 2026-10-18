@@ -74,7 +74,7 @@ SLAYT.turler.adim = { etiket: "🧭 Proje adımı", ciz: s => `
   <h2>${s.baslik}</h2>${s.hafta ? `<span class="rozet">🗓️ Yıllık plan: ${s.hafta}. hafta</span>` : ""}
   ${s.kitap ? `<details class="ad-kitap"><summary>📖 Kitap ne yaptı? <span>${s.kitap.ozet || ""}</span></summary>${s.kitap.metin ? `<p class="metin">${s.kitap.metin}</p>` : ""}${GORSEL.ciz(s.kitap.gorsel)}${s.kitap.sayfa ? `<div class="kitap">📖 Kitap ${s.kitap.sayfa}</div>` : ""}</details>` : ""}
   ${s.sen ? `<div class="ad-sen"><div class="s-baslik">🎯 Sen kendi projende</div>${s.sen.metin ? `<p class="metin">${s.sen.metin}</p>` : ""}${GORSEL.ciz(s.sen.gorsel)}${s.sen.adimlar ? `<ol class="adimlar">${s.sen.adimlar.map(a => `<li>${a}</li>`).join("")}</ol>` : ""}</div>` : ""}
-  ${s.teslim ? `<div class="ad-teslim"><div class="s-baslik">📤 Teslim · Drive klasörüne yükle</div>${s.teslim.dosya ? `<code>AdSoyad_${s.teslim.dosya}</code>` : ""}${s.teslim.liste ? `<ul>${s.teslim.liste.map(x => `<li>☐ ${x}</li>`).join("")}</ul>` : ""}</div>` : ""}
+  ${s.teslim ? `<div class="ad-teslim"><div class="s-baslik">📤 Teslim · ${window.KONULAR && KONULAR.teslimLink ? `<a href="${KONULAR.teslimLink}" target="_blank" rel="noopener">Drive klasörüne yükle ↗</a>` : "Drive klasörüne yükle"}</div>${s.teslim.dosya ? `<code>AdSoyad_${s.teslim.dosya}</code>` : ""}${s.teslim.liste ? `<ul>${s.teslim.liste.map(x => `<li>☐ ${x}</li>`).join("")}</ul>` : ""}</div>` : ""}
   ${s.onay ? `<div class="ad-onay">🧑‍🏫 ${s.onay === true ? "Hocana göster. Onay almadan sonraki aşamaya geçme." : s.onay}</div>` : ""}${not(s)}` };
 
 // ✅ TEST: tıkla, doğru mu gör (hiçbir şey kaydedilmez)

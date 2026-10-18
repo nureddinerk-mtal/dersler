@@ -401,3 +401,4 @@ pre.kod { overflow-x: auto; max-width: 100%; }
 .vr-alan{padding:3px 8px;border-top:1px solid #eee;font-family:Consolas,monospace;font-size:.8rem;word-break:break-word}
 .vr-iliski{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .vr-iliski span{background:#f3f0e8;border-radius:12px;padding:2px 10px;font-size:.8rem}
+.ad-teslim .s-baslik a{color:#1a66c9}
