@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Konu</title>
-  <link rel="stylesheet" href="css/ortak.css?v=6">
+  <link rel="stylesheet" href="css/ortak.css?v=7">
 </head>
 <body class="oynatici">
 
@@ -22,10 +22,10 @@
     <button id="sonraki">İleri ►</button>
   </nav>
 
-  <script src="veri/dersler.js?v=6"></script>
-  <script src="js/ortak.js?v=6"></script>
-  <script src="js/gorseller.js?v=6"></script>
-  <script src="js/slaytlar.js?v=6"></script>
+  <script src="veri/dersler.js?v=7"></script>
+  <script src="js/ortak.js?v=7"></script>
+  <script src="js/gorseller.js?v=7"></script>
+  <script src="js/slaytlar.js?v=7"></script>
   <script>
     const sayfa = document.getElementById("sayfa");
     const ders = dersBul(param("d"));
@@ -45,6 +45,7 @@
           return yukle(`veri/${ders.kod}/${no}.js`);
         })
         .then(() => {
+          window.KOD_DIL = window.KONU.dil || "";
           slaytlar = window.KONU.slaytlar.filter(s => s.tur !== "hoca" || HOCA);
           document.title = konu.no + " · " + konu.baslik;
           document.getElementById("baslik").textContent = konu.no + " · " + konu.baslik;
