@@ -18,19 +18,21 @@ window.KONULAR = {
       { no: "09", baslik: "Devre elemanları ve ilk devre simülasyonu",          kitap: "s. 58–67", hazir: true },
       { no: "10", baslik: "Simülasyon aracı (Packet Tracer): kurulum ve arayüz", kitap: "s. 68–73", hazir: true },
       { no: "11", baslik: "Blok temelli IoT: LED yakıp söndürme",              kitap: "s. 73–79", hazir: true },
-      { no: "12", baslik: "Nesnelerin internetinde Python ile programlama",     kitap: "s. 79–85" },
-      { no: "13", baslik: "Mikrodenetleyici kart yapısı ve arayüzü",           kitap: "s. 85–91" },
-      { no: "14", baslik: "Simülasyon aracıyla akıllı ev",                     kitap: "s. 91–101" }
+      { no: "12", baslik: "Nesnelerin internetinde Python ile programlama",     kitap: "s. 79–85",  hazir: true },
+      { no: "13", baslik: "Mikrodenetleyici kart yapısı ve Arduino IDE",        kitap: "s. 85–91",  hazir: true },
+      { no: "14", baslik: "Simülasyon aracıyla akıllı ev",                     kitap: "s. 91–101", hazir: true }
     ]},
     { ad: "Oyun Programlama", simge: "🎮", konular: [
-      { no: "15", baslik: "Oyun nedir? Oyun motoru ve arayüz",                 kitap: "s. 104–108" },
-      { no: "16", baslik: "Sahne düzenleme ve nesne ekleme",                   kitap: "s. 108–122" },
-      { no: "17", baslik: "Ön izleme, kaydetme, nesneye davranış ekleme",      kitap: "s. 122–131" },
-      { no: "18", baslik: "Olaylar (events)",                                  kitap: "s. 131–139" },
-      { no: "19", baslik: "Animasyon, menü, ses ve müzik",                     kitap: "s. 139–154" },
-      { no: "20", baslik: "Temel oyun mekanikleri: uzay gemisi oyunu",         kitap: "s. 154–170" },
-      { no: "21", baslik: "Platform oyunu",                                    kitap: "s. 170–197" },
-      { no: "22", baslik: "Oyunu test etme ve yayınlama",                      kitap: "s. 197–200" }
+      { no: "15", baslik: "Oyun, video oyun türleri ve oyun geliştirme motoru", kitap: "s. 104–108", hazir: true },
+      { no: "16", baslik: "Oyun ayarları, nesne ekleme, ön izleme, kaydetme",  kitap: "s. 108–123", hazir: true },
+      { no: "17", baslik: "Arka plan rengi ve nesneye davranış ekleme",         kitap: "s. 123–131", hazir: true },
+      { no: "18", baslik: "Olaylar (events): koşul ve eylem",                   kitap: "s. 131–139", hazir: true },
+      { no: "19", baslik: "Animasyon, menü, ses ve müzik",                     kitap: "s. 139–156", hazir: true },
+      { no: "20", baslik: "Temel oyun mekanikleri: uzay gemisi oyunu",         kitap: "s. 156–170", hazir: true },
+      { no: "21", baslik: "Platform oyunu 1: oyuncu, zeminler, animasyonlar",  kitap: "s. 170–180", hazir: true },
+      { no: "22", baslik: "Platform oyunu 2: ödül, skor, kamera, katman",      kitap: "s. 180–185", hazir: true },
+      { no: "23", baslik: "Platform oyunu 3: düşman, bölüm geçme",             kitap: "s. 185–196", hazir: true },
+      { no: "24", baslik: "Oyunu test etme ve yayınlama",                      kitap: "s. 196–198", hazir: true }
     ]}
   ]
 };

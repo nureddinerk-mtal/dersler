@@ -106,7 +106,7 @@ GORSEL.tipler.tablolar = g => g.tablolar.map((t, i) =>
 
 // ── BLOK TABANLI PROGRAMLAMA (sprog) ────────────────────────────────────────
 // Sahne: blok tabanlı programın sahnesi (x: -240…240, y: -180…180)
-// { tip:"sahne", proje, dekor:"gok|deniz|cim|oda|uzay|kar|tiyatro|beyaz|<css renk>", izgara:true,
+// { tip:"sahne", motor:"gd" (oyun motoru ön izlemesi), proje, dekor:"gok|deniz|cim|oda|uzay|kar|tiyatro|beyaz|<css renk>", izgara:true,
 //   suslar:[{e,x,y,boy}], kuklalar:[{e,x,y,boy,balon,dusunce,ters,ad}], hareket:[{x1,y1,x2,y2}],
 //   cizim:[{noktalar:[[x,y]...], renk, kalinlik}], sor:{soru,cevap}, degiskenler:[["Skor",5]], tus, yazi }
 const DEKOR = {
@@ -117,9 +117,10 @@ const DEKOR = {
 GORSEL.tipler.sahne = g => {
   const d = DEKOR[g.dekor || "beyaz"] || [g.dekor, g.dekor];
   const Y = y => -y, k = [];
-  k.push(`<defs><linearGradient id="dk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${d[0]}"/><stop offset="1" stop-color="${d[1]}"/></linearGradient>
+  const gid = "dk" + String(d[0] + d[1]).replace(/[^a-z0-9]/gi, "");
+  k.push(`<defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${d[0]}"/><stop offset="1" stop-color="${d[1]}"/></linearGradient>
     <marker id="okb" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#333"/></marker></defs>`);
-  k.push(`<rect x="-240" y="-180" width="480" height="360" fill="url(#dk)"/>`);
+  k.push(`<rect x="-240" y="-180" width="480" height="360" fill="url(#${gid})"/>`);
   if (d[2]) k.push(`<rect x="-240" y="90" width="480" height="90" fill="${d[2]}"/>`);
   if (g.izgara) {
     for (let x = -200; x <= 200; x += 40) k.push(`<line x1="${x}" y1="-180" x2="${x}" y2="180" stroke="#0002"/>`);
@@ -151,7 +152,7 @@ GORSEL.tipler.sahne = g => {
   if (g.sor) k.push(`<rect x="-228" y="104" width="456" height="66" rx="8" fill="#fff" stroke="#bbb"/><text x="-216" y="126" font-size="14" fill="#333">${kacis(g.sor.soru || "")}</text>
     <rect x="-216" y="136" width="400" height="24" rx="12" fill="#fff" stroke="#4c97ff" stroke-width="2"/><text x="-204" y="153" font-size="13" fill="#222">${kacis(g.sor.cevap || "")}</text>
     <circle cx="200" cy="148" r="11" fill="#4c97ff"/><text x="200" y="153" font-size="13" text-anchor="middle" fill="#fff">✓</text>`);
-  return `<div class="sh-ust"><span>🏁 ⏹</span><span>${kacis(g.proje || "")}</span>${g.tus ? `<span class="sh-tus">⌨️ ${kacis(g.tus)}</span>` : ""}</div>
+  return `<div class="sh-ust"><span>${g.motor === "gd" ? "▶ Ön izleme" : "🏁 ⏹"}</span><span>${kacis(g.proje || "")}</span>${g.tus ? `<span class="sh-tus">⌨️ ${kacis(g.tus)}</span>` : ""}</div>
     <svg viewBox="-240 -180 480 360" class="sh-svg" font-family="Segoe UI, Arial, sans-serif">${k.join("")}</svg>${g.yazi ? `<div class="r-yazi">${g.yazi}</div>` : ""}`;
 };
 
@@ -181,3 +182,18 @@ function sbCiz() {
 }
 new MutationObserver(sbCiz).observe(document.documentElement, { childList: true, subtree: true });
 GORSEL.tipler.bloklar = g => `<div class="sb-bekle">${kacis(g.kod)}</div>`;
+
+// ── OYUN MOTORU (GDevelop) OLAY SAYFASI ─────────────────────────────────────
+// { tip:"olaylar", sekme:"New scene (Events)", satirlar:[
+//     { kosul:["Left key is pressed"], eylem:["Delete Oyuncu1"], alt:[ ...aynı yapı... ] },
+//     { yorum:"Açıklama" } ] }
+// Koşul boşsa "(koşul yok · her karede)" yazılır.
+function olaySatir(r, d) {
+  if (r.yorum) return `<div class="ol-yorum" style="margin-left:${d * 22}px">💬 ${r.yorum}</div>`;
+  const kos = (r.kosul && r.kosul.length) ? r.kosul.map(x => `<div class="ol-k">${x}</div>`).join("") : `<div class="ol-k ol-bos">(koşul yok · her karede çalışır)</div>`;
+  const eyl = (r.eylem || []).map(x => `<div class="ol-e">${x}</div>`).join("");
+  return `<div class="ol-satir" style="margin-left:${d * 22}px"><div class="ol-kosul">${kos}</div><div class="ol-eylem">${eyl}</div></div>`
+    + (r.alt || []).map(a => olaySatir(a, d + 1)).join("");
+}
+GORSEL.tipler.olaylar = g => `<div class="ol-ust">${g.sekme || "New scene (Events)"}</div>
+  <div class="ol-baslik"><span>Koşullar</span><span>Eylemler</span></div>${g.satirlar.map(r => olaySatir(r, 0)).join("")}`;

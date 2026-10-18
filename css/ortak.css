@@ -304,3 +304,17 @@ pre.kod { overflow-x: auto; max-width: 100%; }
 .g-bloklar .sb-bekle, .g-bloklar .sb-hata { white-space: pre; font-family: Consolas, monospace; font-size: .85rem; color: #555; background: #f6f7f9; padding: 8px; border-radius: 6px; }
 .g-ikili .g-sahne { margin: 0 auto; }
 .g-bloklar .sb3-comment-label { fill: #5a4a00 !important; font-weight: 600; }
+
+/* Oyun motoru olay sayfası */
+.g-olaylar { max-width: 620px; border: 2px solid #c9d2e3; border-radius: 10px; overflow: hidden; background: #fff; font-size: .9rem; }
+.ol-ust { background: #2e2b45; color: #fff; padding: 4px 10px; font-size: .85rem; }
+.ol-baslik { display: grid; grid-template-columns: 1fr 1fr; background: #eef0f6; color: #556; font-size: .75rem; padding: 2px 8px; }
+.ol-satir { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #dde; border-left: 4px solid #4f6bd8; min-width: 0; }
+.ol-kosul { background: #f5f7ff; padding: 4px 8px; border-right: 1px solid #dde; min-width: 0; }
+.ol-eylem { padding: 4px 8px; min-width: 0; }
+.ol-k, .ol-e { padding: 2px 0; overflow-wrap: anywhere; }
+.ol-k::before { content: "◆ "; color: #4f6bd8; }
+.ol-e::before { content: "▸ "; color: #27ae60; }
+.ol-bos { color: #889; font-style: italic; }
+.ol-bos::before { content: ""; }
+.ol-yorum { background: #fff6c4; color: #5a4a00; padding: 5px 10px; border-top: 1px solid #e8d77a; }
