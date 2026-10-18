@@ -26,6 +26,8 @@ window.KONULAR = {
       { no: "15", baslik: "Oyun, video oyun türleri ve oyun geliştirme motoru", kitap: "s. 104–108", hazir: true },
       { no: "16", baslik: "Oyun ayarları, nesne ekleme, ön izleme, kaydetme",  kitap: "s. 108–123", hazir: true },
       { no: "17", baslik: "Arka plan rengi ve nesneye davranış ekleme",         kitap: "s. 123–131", hazir: true },
+      { no: "17A", baslik: "Resim düzenleme: kendi karakterini çiz",           ek: true, hazir: true },
+      { no: "17B", baslik: "Üç boyutlu modelleme ve oyun programına aktarma",   ek: true, hazir: true },
       { no: "18", baslik: "Olaylar (events): koşul ve eylem",                   kitap: "s. 131–139", hazir: true },
       { no: "19", baslik: "Animasyon, menü, ses ve müzik",                     kitap: "s. 139–156", hazir: true },
       { no: "20", baslik: "Temel oyun mekanikleri: uzay gemisi oyunu",         kitap: "s. 156–170", hazir: true },
