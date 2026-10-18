@@ -293,3 +293,14 @@ pre.kod { overflow-x: auto; max-width: 100%; }
 .g-tablo, .g-tablolar, .g-html { overflow-x: auto; }
 .s-metin code { white-space: pre-wrap; word-break: break-all; }
 .kart, .k-ust, .k-alt { min-width: 0; overflow-wrap: anywhere; }
+
+/* Blok tabanlı sahne ve kod blokları (sprog) */
+.g-sahne { max-width: 480px; border: 2px solid #c9d2e3; border-radius: 10px; overflow: hidden; background: #fff; }
+.sh-ust { display: flex; justify-content: space-between; gap: 8px; padding: 4px 10px; background: #e9eef6; font-size: .85rem; color: #445; }
+.sh-tus { background: #333; color: #fff; border-radius: 6px; padding: 0 8px; }
+.sh-svg { display: block; width: 100%; height: auto; }
+.g-sahne .r-yazi { padding: 4px 10px; }
+.g-bloklar { overflow-x: auto; }
+.g-bloklar .sb-bekle, .g-bloklar .sb-hata { white-space: pre; font-family: Consolas, monospace; font-size: .85rem; color: #555; background: #f6f7f9; padding: 8px; border-radius: 6px; }
+.g-ikili .g-sahne { margin: 0 auto; }
+.g-bloklar .sb3-comment-label { fill: #5a4a00 !important; font-weight: 600; }

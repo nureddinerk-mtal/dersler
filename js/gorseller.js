@@ -103,3 +103,81 @@ GORSEL.tipler.tablo = g => tabloCiz(g);
 // İlişkili tablolar: { tip:"tablolar", tablolar:[...], iliski:"1 ⟷ ∞" veya her ara için dizi }
 GORSEL.tipler.tablolar = g => g.tablolar.map((t, i) =>
   (i ? `<div class="vt-ok"><span>${(Array.isArray(g.iliski) ? g.iliski[i - 1] : g.iliski) || ""}</span>⟷</div>` : "") + tabloCiz(t)).join("");
+
+// ── BLOK TABANLI PROGRAMLAMA (sprog) ────────────────────────────────────────
+// Sahne: blok tabanlı programın sahnesi (x: -240…240, y: -180…180)
+// { tip:"sahne", proje, dekor:"gok|deniz|cim|oda|uzay|kar|tiyatro|beyaz|<css renk>", izgara:true,
+//   suslar:[{e,x,y,boy}], kuklalar:[{e,x,y,boy,balon,dusunce,ters,ad}], hareket:[{x1,y1,x2,y2}],
+//   cizim:[{noktalar:[[x,y]...], renk, kalinlik}], sor:{soru,cevap}, degiskenler:[["Skor",5]], tus, yazi }
+const DEKOR = {
+  gok: ["#8fd3ff", "#e6f7ff"], deniz: ["#1e88c9", "#7fd0f5"], cim: ["#bfe8ff", "#e9f8ff", "#7cc96b"],
+  oda: ["#f6e7cf", "#f6e7cf", "#c99a6b"], uzay: ["#0b1033", "#2a2f6b"], kar: ["#9fb7d6", "#e8f0fa", "#ffffff"],
+  tiyatro: ["#4a1730", "#7a2850", "#5b3a22"], beyaz: ["#ffffff", "#ffffff"]
+};
+GORSEL.tipler.sahne = g => {
+  const d = DEKOR[g.dekor || "beyaz"] || [g.dekor, g.dekor];
+  const Y = y => -y, k = [];
+  k.push(`<defs><linearGradient id="dk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${d[0]}"/><stop offset="1" stop-color="${d[1]}"/></linearGradient>
+    <marker id="okb" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#333"/></marker></defs>`);
+  k.push(`<rect x="-240" y="-180" width="480" height="360" fill="url(#dk)"/>`);
+  if (d[2]) k.push(`<rect x="-240" y="90" width="480" height="90" fill="${d[2]}"/>`);
+  if (g.izgara) {
+    for (let x = -200; x <= 200; x += 40) k.push(`<line x1="${x}" y1="-180" x2="${x}" y2="180" stroke="#0002"/>`);
+    for (let y = -160; y <= 160; y += 40) k.push(`<line x1="-240" y1="${y}" x2="240" y2="${y}" stroke="#0002"/>`);
+    k.push(`<line x1="-240" y1="0" x2="240" y2="0" stroke="#0007" stroke-width="1.5"/><line x1="0" y1="-180" x2="0" y2="180" stroke="#0007" stroke-width="1.5"/>`);
+    [["240","232","-6","end"],["-240","-236","-6","start"]].forEach(([t,x,y,a]) => k.push(`<text x="${x}" y="${y}" font-size="12" text-anchor="${a}" fill="#333">x:${t}</text>`));
+    k.push(`<text x="6" y="-168" font-size="12" fill="#333">y:180</text><text x="6" y="174" font-size="12" fill="#333">y:-180</text>`);
+  }
+  (g.suslar || []).forEach(s => k.push(`<text x="${s.x}" y="${Y(s.y)}" font-size="${s.boy || 40}" text-anchor="middle" dominant-baseline="central">${s.e}</text>`));
+  (g.cizim || []).forEach(c => k.push(`<polyline points="${c.noktalar.map(p => p[0] + "," + Y(p[1])).join(" ")}" fill="none" stroke="${c.renk || "#2f80ed"}" stroke-width="${c.kalinlik || 3}" stroke-linejoin="round"/>`));
+  (g.hareket || []).forEach(h => k.push(`<line x1="${h.x1}" y1="${Y(h.y1)}" x2="${h.x2}" y2="${Y(h.y2)}" stroke="#333" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#okb)"/>`));
+  (g.kuklalar || []).forEach(s => {
+    const b = s.boy || 56, x = s.x || 0, y = Y(s.y || 0);
+    k.push(`<text x="${x}" y="${y}" font-size="${b}" text-anchor="middle" dominant-baseline="central"${s.ters ? ` transform="translate(${2 * x},0) scale(-1,1)"` : ""}>${s.e}</text>`);
+    if (s.ad) k.push(`<text x="${x}" y="${y + b / 2 + 12}" font-size="12" text-anchor="middle" fill="#333" font-weight="700">${s.ad}</text>`);
+    if (s.balon || s.dusunce) {
+      const m = s.balon || s.dusunce, w = Math.max(40, m.length * 8.2 + 20), bx = Math.min(x + b / 3, 236 - w), by = y - b / 2 - 40;
+      k.push(`<rect x="${bx}" y="${by}" width="${w}" height="30" rx="12" fill="#fff" stroke="#999" stroke-width="1.5"/>`);
+      k.push(s.balon ? `<path d="M${bx + 14},${by + 29} l-4,12 l14,-12" fill="#fff" stroke="#999" stroke-width="1.5"/><rect x="${bx + 10}" y="${by + 26}" width="20" height="5" fill="#fff"/>`
+        : `<circle cx="${bx + 10}" cy="${by + 38}" r="4" fill="#fff" stroke="#999"/><circle cx="${bx + 4}" cy="${by + 46}" r="2.5" fill="#fff" stroke="#999"/>`);
+      k.push(`<text x="${bx + w / 2}" y="${by + 20}" font-size="14" text-anchor="middle" fill="#222">${kacis(m)}</text>`);
+    }
+  });
+  (g.degiskenler || []).forEach(([a, v], i) => {
+    const w = a.length * 7.5 + String(v).length * 8 + 30;
+    k.push(`<rect x="-234" y="${-174 + i * 26}" width="${w}" height="22" rx="4" fill="#e6f0ff" stroke="#aac"/><text x="-228" y="${-158 + i * 26}" font-size="12" font-weight="700" fill="#444">${kacis(a)}</text>
+      <rect x="${-234 + a.length * 7.5 + 10}" y="${-171 + i * 26}" width="${String(v).length * 8 + 14}" height="16" rx="8" fill="#ff8c1a"/><text x="${-234 + a.length * 7.5 + 17 + String(v).length * 4}" y="${-159 + i * 26}" font-size="12" text-anchor="middle" fill="#fff">${kacis(String(v))}</text>`);
+  });
+  if (g.sor) k.push(`<rect x="-228" y="104" width="456" height="66" rx="8" fill="#fff" stroke="#bbb"/><text x="-216" y="126" font-size="14" fill="#333">${kacis(g.sor.soru || "")}</text>
+    <rect x="-216" y="136" width="400" height="24" rx="12" fill="#fff" stroke="#4c97ff" stroke-width="2"/><text x="-204" y="153" font-size="13" fill="#222">${kacis(g.sor.cevap || "")}</text>
+    <circle cx="200" cy="148" r="11" fill="#4c97ff"/><text x="200" y="153" font-size="13" text-anchor="middle" fill="#fff">✓</text>`);
+  return `<div class="sh-ust"><span>🏁 ⏹</span><span>${kacis(g.proje || "")}</span>${g.tus ? `<span class="sh-tus">⌨️ ${kacis(g.tus)}</span>` : ""}</div>
+    <svg viewBox="-240 -180 480 360" class="sh-svg" font-family="Segoe UI, Arial, sans-serif">${k.join("")}</svg>${g.yazi ? `<div class="r-yazi">${g.yazi}</div>` : ""}`;
+};
+
+// Kod blokları: scratchblocks ile çizilir (İngilizce yazılır, Türkçe gösterilir)
+// { tip:"bloklar", kod:`when flag clicked\nsay [Merhaba!]` }
+let sbYuk = null;
+function sbYukle() {
+  if (sbYuk) return sbYuk;
+  const ekle = s => new Promise((ok, red) => { const e = document.createElement("script"); e.src = s; e.onload = ok; e.onerror = red; document.head.appendChild(e); });
+  const k = "js/vendor/";
+  return sbYuk = ekle(k + "scratchblocks.min.js").then(() => ekle(k + "scratchblocks-tr.js"));
+}
+function sbCiz() {
+  const bek = document.querySelectorAll(".sb-bekle");
+  if (!bek.length) return;
+  sbYukle().then(() => bek.forEach(el => {
+    if (!el.classList.contains("sb-bekle")) return;
+    el.classList.remove("sb-bekle");
+    try {
+      const doc = scratchblocks.parse(el.textContent, { languages: ["en"] });
+      doc.scripts.forEach(sc => sc.blocks.forEach(b => { if (typeof b.translate !== "function") b.translate = () => {}; }));
+      doc.translate(scratchblocks.allLanguages.tr);
+      el.textContent = "";
+      el.appendChild(scratchblocks.render(doc, { style: "scratch3", scale: 0.75 }));
+    } catch (e) { el.classList.add("sb-hata"); }
+  })).catch(() => bek.forEach(el => el.classList.add("sb-hata")));
+}
+new MutationObserver(sbCiz).observe(document.documentElement, { childList: true, subtree: true });
+GORSEL.tipler.bloklar = g => `<div class="sb-bekle">${kacis(g.kod)}</div>`;

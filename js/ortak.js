@@ -1,7 +1,7 @@
 // ORTAK YARDIMCILAR — tüm sayfalarda kullanılır
 
 // Her güncellemede bu sayıyı ve HTML'lerdeki ?v= değerini artır (tarayıcı eski dosyayı kullanmasın)
-const SURUM = "7";
+const SURUM = "8";
 
 // Adres çubuğundaki ?d=wtug&k=01 gibi değerleri okur
 function param(ad) {

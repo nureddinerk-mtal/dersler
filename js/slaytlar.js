@@ -88,7 +88,7 @@ SLAYT.turler.hoca = { etiket: "🧑‍🏫 Öğretmen notu · Öğrenciler görm
   ${hListe("⏱️ Ders akışı", s.akis)}
   ${hListe("⚠️ Sık yapılan hatalar", s.hatalar)}
   ${s.sorular ? `<div class="h-bolum"><h3>🙋 Öğrenci sorarsa</h3>${s.sorular.map(q => `<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("")}</div>` : ""}
-  ${s.kod ? `<div class="h-bolum"><details><summary>💻 Kod (çözüm) · açmak için tıkla</summary><pre class="kod">${kodRenk(s.kod)}</pre></details></div>` : ""}${not(s)}` };
+  ${s.kod ? `<div class="h-bolum"><details><summary>💻 Kod (çözüm) · açmak için tıkla</summary><pre class="kod">${kodRenk(s.kod)}</pre></details></div>` : ""}${s.bloklar ? `<div class="h-bolum"><details><summary>🧩 Bloklar (çözüm) · açmak için tıkla</summary>${GORSEL.ciz({ tip: "bloklar", kod: s.bloklar })}</details></div>` : ""}${not(s)}` };
 
 // Test seçeneklerine tıklama
 document.addEventListener("click", e => {
